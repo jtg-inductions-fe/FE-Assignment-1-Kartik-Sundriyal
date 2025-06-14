@@ -1,0 +1,64 @@
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    font-family: 'Circular Std', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 120%;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+
+    &--primary {
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+
+    &--secondary {
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: darken($color-secondary, 10%);
+        }
+    }
+
+    &--login {
+        color: $dark;
+        width: 105px;
+        height: 49px;
+    }
+
+    &--signup {
+        color: $light;
+        width: 115px;
+        height: 49px;
+    }
+
+    &--get-started {
+        color: $light;
+        width: 141px;
+        height: 49px;
+    }
+
+    &--watch-demo {
+        color: $dark;
+        width: 181px;
+        height: 56px;
+        border: 1px;
+    }
+
+    &--subscribe {
+        padding: 32px 64px;
+        width: 235px;
+        height: 96px;
+        border: none;
+        border-radius: 32px;
+        color: $color-secondary;
+        font-size: 23px;
+    }
+}
