@@ -1,0 +1,163 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.header {
+    padding: 2.187rem 0;
+    margin: 0 1.054rem;
+
+    @include respond(md) {
+        margin-left: 4rem;
+        margin-right: 4rem;
+        padding-top: 2rem;
+    }
+
+    @include respond(lg) {
+        margin: 2.125rem 6.1rem 0;
+        margin-left: 9.35rem;
+        padding: 2rem 0;
+    }
+
+    &__nav-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(md) {
+            > * {
+                flex: 1;
+            }
+        }
+
+        @include respond(lg) {
+            > * {
+                flex: 0;
+            }
+        }
+    }
+
+    &__nav-icon {
+        display: flex;
+        padding: 0.25rem;
+    }
+
+    &__app-logo {
+        padding: 0.25rem 0 0 0;
+        @include respond(md) {
+            order: 1;
+            justify-content: center;
+            padding: 0;
+            padding-right: 0.25rem;
+        }
+
+        @include respond(lg) {
+            order: 0;
+            justify-content: flex-start;
+            padding-right: 0;
+        }
+    }
+
+    &__logo {
+        background-image: linear-gradient(
+            to right,
+            $color-pink,
+            $color-primary
+        );
+        color: transparent;
+        background-clip: text;
+    }
+
+    &__menu-logo {
+        @include respond(lg) {
+            display: none;
+        }
+    }
+
+    &__logo,
+    &__hamburger-icon {
+        font-size: 2.5rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    &__menubar {
+        @include invisible;
+
+        &--visible {
+            pointer-events: auto;
+            visibility: visible;
+            transition: transform 0.4s ease-in-out;
+            transform: translateX(0);
+        }
+
+        .icon-cross {
+            align-self: flex-end;
+            transition:
+                transform 0.5s ease,
+                color 0.3s ease;
+            &:hover {
+                cursor: pointer;
+                transform: rotate(90deg);
+                transition: transform 0.5s ease;
+            }
+            @include respond(lg) {
+                display: none;
+            }
+        }
+
+        @include respond(md) {
+            all: unset;
+            position: static;
+            order: 1;
+            flex: 1;
+            .header__nav-links {
+                @include invisible;
+            }
+        }
+
+        @include respond(lg) {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    .header__nav-links {
+        display: flex;
+        flex-direction: column;
+
+        @include respond(lg) {
+            all: unset;
+            flex: 1;
+            font-size: 0.875rem;
+            position: static;
+            height: auto;
+            transform: none;
+            transition: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            background-color: transparent;
+            padding: 0;
+        }
+
+        &--visible {
+            pointer-events: auto;
+            visibility: visible;
+            transition: transform 0.4s ease-in-out;
+            transform: translate(0);
+        }
+    }
+
+    &__btn-group {
+        @include respond(md) {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            justify-content: flex-end;
+            order: 2;
+        }
+    }
+}

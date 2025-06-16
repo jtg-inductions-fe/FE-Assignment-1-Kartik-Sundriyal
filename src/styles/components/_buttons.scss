@@ -62,6 +62,32 @@
         font-size: $font-size-base;
     }
 
+    &--navlink {
+        font-size: inherit;
+        padding: 0.5rem;
+        color: $color-text;
+        display: block;
+        border-radius: 0.5rem;
+
+        &:hover {
+            color: $color-dark;
+            background-color: rgba(255, 254, 254, 0.238);
+        }
+
+        @include respond(lg) {
+            background-color: transparent;
+            display: inline;
+            padding: 0;
+            &.active {
+                color: $color-dark;
+            }
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
     &:focus-visible {
         outline: px-to-rem(2) solid $color-primary;
         outline-offset: px-to-rem(2);
