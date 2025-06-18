@@ -3,5 +3,5 @@
 /// @param {Number} $base - The root font size (default: 16px).
 /// @return {Number} rem value
 @function px-to-rem($px, $base: 16) {
-    @return calc($px / $base) rem;
+    @return ($px / $base) * 1rem;
 }
