@@ -1,15 +1,4 @@
-@use 'abstracts/variables';
-@use 'abstracts/mixins';
-
-@use 'base/reset';
-@use 'base/base';
-@use 'base/typography';
-@use 'base/fonts';
-
-@use 'layout/header';
-@use 'layout/footer';
-
-@use 'components/buttons';
-@use 'components/card';
-
-@use 'vendors/icomoon';
+@use 'base';
+@use 'components';
+@use 'layout';
+@use 'vendors';

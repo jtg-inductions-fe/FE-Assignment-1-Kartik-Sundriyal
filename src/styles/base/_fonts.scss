@@ -1,8 +1,29 @@
-@font-face {
-    font-family: 'Circular Std';
-    src:
-        url('/assets/fonts/CircularStd.woff2') format('woff2'),
-        url('/assets/fonts/CircularStd.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+@use '../abstracts/mixins' as *;
+
+// Circular Std Black
+@include font-face(
+    'Circular Std',
+    900,
+    normal,
+    '/assets/fonts/CircularStd-Black.woff2',
+    '/assets/fonts/CircularStd-Black.woff'
+);
+
+// Circular Std Bold
+@include font-face(
+    'Circular Std',
+    700,
+    normal,
+    '/assets/fonts/CircularStd-Bold.woff2',
+    '/assets/fonts/CircularStd-Bold.woff'
+);
+
+// Inter Variable
+@include font-face(
+    'Inter Variable',
+    100 900,
+    normal,
+    '/assets/fonts/InterVariable.woff2',
+    null,
+    'woff2-variations'
+);

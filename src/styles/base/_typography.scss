@@ -1,0 +1,39 @@
+@use '../abstracts/variables' as *;
+
+// Global body text styling
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background-color: $color-white;
+}
+
+// Headings
+h1,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-primary;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-base;
+}
+
+.heading-xl {
+    font-size: $font-size-heading1-large;
+}
+
+.heading-lg {
+    font-size: $font-size-heading3-large;
+}
+
+.heading-md {
+    font-size: $font-size-lg;
+}
+
+.heading-sm {
+    font-size: $font-size-heading5-medium;
+}
+
+.heading-xs {
+    font-size: $font-size-heading6-lg;
+}

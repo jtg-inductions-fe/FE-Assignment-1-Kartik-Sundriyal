@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+$breakpoints: (
+    'mobile': $breakpoint-mobile,
+    'tablet': $breakpoint-tablet,
+    'desktop': $breakpoint-desktop,
+);
+
+@mixin respond($breakpoint) {
+    $size: map-get($breakpoints, $breakpoint);
+    @if $size {
+        @media (min-width: $size) {
+            @content;
+        }
+    } @else {
+        @warn "No value found for breakpoint `#{$breakpoint}`.";
+    }
+}
+
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out) {
+    transition-property: $properties;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+}
+
+@mixin font-face(
+    $family,
+    $weight,
+    $style,
+    $woff2-path,
+    $woff-path,
+    $format-woff2: 'woff2',
+    $format-woff: 'woff',
+    $font-display: swap
+) {
+    @font-face {
+        font-family: #{$family};
+        src: url('#{$woff2-path}') format('#{$format-woff2}') #{if(
+                $woff-path != null,
+                ', url("#{$woff-path}") format("#{$format-woff}")',
+                ''
+            )};
+        font-weight: #{$weight};
+        font-style: $style;
+        font-display: $font-display;
+    }
+}
