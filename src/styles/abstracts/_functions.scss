@@ -1,7 +1,18 @@
-/// Converts pixel values to rem units based on a root font-size.
-/// @param {Number} $px - The pixel value to convert.
+@use 'sass:math';
+
+/// Converts one or more pixel values to rem units based on a root font-size.
+/// @param {Number|List} $px - A single pixel value or a space-separated list of values.
 /// @param {Number} $base - The root font size (default: 16px).
-/// @return {Number} rem value
+/// @return {List|Number} rem value(s)
 @function px-to-rem($px, $base: 16) {
-    @return calc($px / $base) * 1rem;
+    $result: ();
+
+    @if type-of($px) == 'list' {
+        @each $val in $px {
+            $result: append($result, math.div($val, $base) * 1rem);
+        }
+        @return $result;
+    }
+
+    @return math.div($px, $base) * 1rem;
 }

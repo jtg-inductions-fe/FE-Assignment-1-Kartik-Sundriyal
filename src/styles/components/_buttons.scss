@@ -4,9 +4,9 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: px-to-rem(16) px-to-rem(32);
+    padding: px-to-rem(16 32);
     font-family: $font-primary;
-    font-weight: $font-weight-bold;
+    font-weight: 700;
     font-size: $font-size-sm;
     line-height: $line-height-base;
     border: none;
@@ -42,28 +42,28 @@
     }
 
     &--xs {
-        padding: px-to-rem(16) px-to-rem(32);
+        padding: px-to-rem(16 32);
     }
 
     &--sm {
-        padding: px-to-rem(32) px-to-rem(64);
+        padding: px-to-rem(32 64);
         border-radius: px-to-rem(32);
         font-size: $font-size-md;
         background-color: $color-white;
     }
 
     &--lg {
-        padding: px-to-rem(24) px-to-rem(32);
+        padding: px-to-rem(24 32);
     }
 
     &--md {
-        padding: px-to-rem(24) px-to-rem(64);
+        padding: px-to-rem(24 64);
         border-radius: px-to-rem(16);
         font-size: $font-size-base;
     }
 
     &:focus-visible {
-        outline: 2px solid $color-primary;
-        outline-offset: 2px;
+        outline: px-to-rem(2) solid $color-primary;
+        outline-offset: px-to-rem(2);
     }
 }

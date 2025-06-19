@@ -6,7 +6,7 @@ $breakpoints: (
     'desktop': $breakpoint-desktop,
 );
 
-@mixin respond($breakpoint) {
+@mixin respond-to($breakpoint) {
     $size: map-get($breakpoints, $breakpoint);
     @if $size {
         @media (min-width: $size) {
@@ -27,21 +27,21 @@ $breakpoints: (
     $family,
     $weight,
     $style,
-    $woff2-path,
-    $woff-path,
-    $format-woff2: 'woff2',
-    $format-woff: 'woff',
-    $font-display: swap
+    $woff2,
+    $woff: null,
+    $format: 'woff2'
 ) {
+    $src: "url(#{$woff2}) format('#{$format}')";
+
+    @if $woff {
+        $src: $src + ", url(#{$woff}) format('woff')";
+    }
+
     @font-face {
-        font-family: #{$family};
-        src: url('#{$woff2-path}') format('#{$format-woff2}') #{if(
-                $woff-path != null,
-                ', url("#{$woff-path}") format("#{$format-woff}")',
-                ''
-            )};
-        font-weight: #{$weight};
+        font-family: unquote($family);
+        font-weight: $weight;
         font-style: $style;
-        font-display: $font-display;
+        font-display: swap;
+        src: #{unquote($src)};
     }
 }

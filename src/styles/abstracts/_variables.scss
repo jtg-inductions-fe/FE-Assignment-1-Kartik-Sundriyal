@@ -1,3 +1,5 @@
+@use 'functions' as *;
+
 //Color variables:
 $color-primary: rgba(93, 80, 198, 1);
 $color-secondary: rgba(248, 94, 159, 1);
@@ -15,13 +17,13 @@ $color-light: rgba(238, 238, 238, 1);
 $color-blue-charcoal: rgba(41, 45, 50, 1);
 
 //Breakpoint variables:
-$breakpoint-mobile: 430px;
-$breakpoint-tablet: 1024px;
-$breakpoint-desktop: 1440px;
+$breakpoint-mobile: px-to-rem(430);
+$breakpoint-tablet: px-to-rem(1024);
+$breakpoint-desktop: px-to-rem(1440);
 
 // Font families
-$font-primary: 'Circular Std', sans-serif;
-$font-secondary: 'Inter Variable', sans-serif;
+$font-primary: 'circular-std', sans-serif;
+$font-secondary: 'inter', sans-serif;
 
 // Font sizes
 $font-size-base: px-to-rem(16);
@@ -29,31 +31,11 @@ $font-size-sm: px-to-rem(14);
 $font-size-md: px-to-rem(23);
 $font-size-lg: px-to-rem(35);
 
-$font-size-heading1-small: px-to-rem(40);
-$font-size-heading1-medium: px-to-rem(56);
-$font-size-heading1-large: px-to-rem(69);
-
-$font-size-heading2-small: px-to-rem(55);
-$font-size-heading3-small: px-to-rem(32);
-$font-size-heading3-medium: px-to-rem(40);
-$font-size-heading3-large: px-to-rem(44);
-
-$font-size-heading5-small: px-to-rem(24);
-$font-size-heading5-medium: px-to-rem(28);
-
-$font-size-heading6-lg: px-to-rem(23);
-
-$font-size-description-sm: px-to-rem(16);
-$font-size-description-md: px-to-rem(18);
-$font-size-description-lg: px-to-rem(23);
-
 // Line heights
 $line-height-base: 1.2;
 $line-height-description: 1.6;
 $line-height-fixed: px-to-rem(40);
 
-// Font weights
-$font-weight-normal: 400;
-$font-weight-variable-normal: 450;
-$font-weight-bold: 700;
-$font-weight-bolder: 900;
+// Font path
+$font-path: '/assets/fonts/';
+$icomoon-path: '/assets/icomoon';

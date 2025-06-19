@@ -1,39 +1,43 @@
 @use '../abstracts/variables' as *;
 
-// Global body text styling
-body {
-    font-family: $font-primary;
-    font-size: $font-size-base;
-    background-color: $color-white;
-}
+$font-size-heading-1-sm: px-to-rem(40);
+$font-size-heading-1-md: px-to-rem(56);
+$font-size-heading-1-lg: px-to-rem(69);
+
+$font-size-heading-2-sm: px-to-rem(32);
+$font-size-heading-2-md: px-to-rem(40);
+$font-size-heading-2-lg: px-to-rem(44);
+$font-size-heading-2-xl: px-to-rem(55);
+
+$font-size-heading-3-sm: px-to-rem(23);
+$font-size-heading-3-md: px-to-rem(24);
+$font-size-heading-3-lg: px-to-rem(28);
+
+$font-size-description-sm: px-to-rem(16);
+$font-size-description-md: px-to-rem(18);
+$font-size-description-lg: px-to-rem(23);
 
 // Headings
 h1,
-h3,
-h4,
-h5,
-h6 {
+h2,
+h3 {
     font-family: $font-primary;
-    font-weight: $font-weight-bold;
+    font-weight: 700;
     line-height: $line-height-base;
 }
 
 .heading-xl {
-    font-size: $font-size-heading1-large;
+    font-size: $font-size-heading-1-lg;
 }
 
 .heading-lg {
-    font-size: $font-size-heading3-large;
+    font-size: $font-size-heading-2-xl;
 }
 
 .heading-md {
-    font-size: $font-size-lg;
+    font-size: $font-size-heading-2-lg;
 }
 
 .heading-sm {
-    font-size: $font-size-heading5-medium;
-}
-
-.heading-xs {
-    font-size: $font-size-heading6-lg;
+    font-size: $font-size-heading-3-sm;
 }
