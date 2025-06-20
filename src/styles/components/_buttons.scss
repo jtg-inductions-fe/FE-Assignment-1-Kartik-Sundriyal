@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: px-to-rem(16 32);
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    border: none;
+    border-radius: px-to-rem(100);
+    cursor: pointer;
+    @include transition(background-color, 0.2, ease);
+
+    &--primary {
+        background-color: $color-primary;
+
+        &:hover {
+            background-color: darken($color-primary, 10%);
+        }
+    }
+
+    &--secondary {
+        background-color: $color-white;
+
+        &:hover {
+            background-color: darken($color-white, 10%);
+        }
+    }
+
+    &--light {
+        background-color: $color-light;
+    }
+    &--dark {
+        background-color: $color-dark;
+    }
+
+    &--outline {
+        border: solid px-to-rem(1) $color-light;
+    }
+
+    &--xs {
+        padding: px-to-rem(16 32);
+    }
+
+    &--sm {
+        padding: px-to-rem(32 64);
+        border-radius: px-to-rem(32);
+        font-size: $font-size-md;
+        background-color: $color-white;
+    }
+
+    &--lg {
+        padding: px-to-rem(24 32);
+    }
+
+    &--md {
+        padding: px-to-rem(24 64);
+        border-radius: px-to-rem(16);
+        font-size: $font-size-base;
+    }
+
+    &:focus-visible {
+        outline: px-to-rem(2) solid $color-primary;
+        outline-offset: px-to-rem(2);
+    }
+}

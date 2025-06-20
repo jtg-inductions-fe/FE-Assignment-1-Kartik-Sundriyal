@@ -1,0 +1,30 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// Circular Std Black
+@include font-face(
+    'circular-std',
+    900,
+    normal,
+    $font-path + 'circular-std-black.woff2',
+    $font-path + 'circular-std-black.woff'
+);
+
+// Circular Std Bold
+@include font-face(
+    'circular-std',
+    700,
+    normal,
+    $font-path + 'circular-std-bold.woff2',
+    $font-path + 'circular-std-bold.woff'
+);
+
+// Inter Variable
+@include font-face(
+    'inter',
+    '100 900',
+    normal,
+    $font-path + 'inter.woff2',
+    null,
+    'woff2-variations'
+);

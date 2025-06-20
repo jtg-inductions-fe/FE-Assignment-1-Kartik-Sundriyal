@@ -1,0 +1,8 @@
+@use '../abstracts/variables' as *;
+
+// Global body text styling
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background-color: $color-white;
+}
