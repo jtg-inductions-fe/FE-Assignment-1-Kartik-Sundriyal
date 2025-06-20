@@ -9,62 +9,62 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/assets/fav-icon.svg" type="image/svg+xml" />
         <title>Explore the Globe | Best Destinations</title>
-        <!-- Inter (Google Font) CDN -->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet"
-        />
     </head>
     <body>
         <header class="header">
             <nav class="header__nav">
-                <ul class="header__nav-items">
-                    <li class="header__nav-icon header__app-logo">
-                        <a
-                            href="#"
-                            class="icon-app-logo header__logo"
-                            aria-label="Travelog App logo"
-                        ></a>
-                    </li>
-                    <li class="header__nav-icon header__menu-logo">
-                        <a
-                            href="#"
-                            class="icon-hamburger-icon header__hamburger-icon"
-                            aria-label="Menu icon used to open a list of menu items"
-                        ></a>
-                    </li>
-                    <li class="header__menubar">
-                        <span class="header__nav-links">
-                            <span class="icon-cross"></span>
+                <span class="header__icons header__app-logo">
+                    <a
+                        href="#"
+                        class="icon-app-logo header__logo"
+                        aria-label="Travelog App logo"
+                    ></a>
+                </span>
+                <div class="header__menubar">
+                    <ul class="header__nav-links">
+                        <li><span class="icon-cross"></span></li>
+                        <li>
                             <a href="#" class="button button--navlink active"
                                 >Home</a
                             >
+                        </li>
+                        <li>
                             <a href="#" class="button button--navlink"
                                 >Discover</a
                             >
+                        </li>
+                        <li>
                             <a href="#" class="button button--navlink"
                                 >Special Deals</a
                             >
+                        </li>
+                        <li>
                             <a href="#" class="button button--navlink"
                                 >Contact</a
                             >
-                        </span>
-                        <span class="header__btn-group">
-                            <a
-                                href="#"
-                                class="button button--secondary button--login"
-                                >Log In</a
-                            >
-                            <a
-                                href="#"
-                                class="button button--primary button--signup"
-                                >Sign Up</a
-                            >
-                        </span>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                    <div class="header__btn-group">
+                        <a
+                            href="#"
+                            class="button button--secondary button--login"
+                            >Log In</a
+                        >
+                        <a
+                            href="#"
+                            class="button button--primary button--signup"
+                            >Sign Up</a
+                        >
+                    </div>
+                </div>
+
+                <span class="header__icons header__menu-icon">
+                    <button
+                        href="#"
+                        class="icon-hamburger header__hamburger-icon"
+                        aria-label="Menu icon used to open a list of menu items"
+                    ></button>
+                </span>
             </nav>
         </header>
         <script type="module" src="./src/script/index.js"></script>
