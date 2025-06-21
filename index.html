@@ -13,54 +13,36 @@
     <body>
         <header class="header">
             <nav class="header__nav">
-                <span class="header__icons header__app-logo">
+                <span class="header__icons header__logo-wrapper">
                     <a
                         href="#"
                         class="icon-app-logo header__logo"
                         aria-label="Travelog App logo"
                     ></a>
                 </span>
-                <div class="header__menubar">
+                <dialog class="header__menubar">
                     <ul class="header__nav-links">
-                        <li><span class="icon-cross"></span></li>
-                        <li>
-                            <a href="#" class="button button--navlink active"
-                                >Home</a
-                            >
+                        <li class="header__nav-link header__nav-link--active">
+                            <a href="#">Home</a>
                         </li>
-                        <li>
-                            <a href="#" class="button button--navlink"
-                                >Discover</a
-                            >
+                        <li class="header__nav-link">
+                            <a href="#">Discover</a>
                         </li>
-                        <li>
-                            <a href="#" class="button button--navlink"
-                                >Special Deals</a
-                            >
+                        <li class="header__nav-link">
+                            <a href="#">Special Deals</a>
                         </li>
-                        <li>
-                            <a href="#" class="button button--navlink"
-                                >Contact</a
-                            >
+                        <li class="header__nav-link">
+                            <a href="#">Contact</a>
                         </li>
                     </ul>
                     <div class="header__btn-group">
-                        <a
-                            href="#"
-                            class="button button--secondary button--login"
-                            >Log In</a
-                        >
-                        <a
-                            href="#"
-                            class="button button--primary button--signup"
-                            >Sign Up</a
-                        >
+                        <a href="#" class="button button--secondary">Log In</a>
+                        <a href="#" class="button button--primary">Sign Up</a>
                     </div>
-                </div>
+                </dialog>
 
-                <span class="header__icons header__menu-icon">
+                <span class="header__icons header__icon-wrapper">
                     <button
-                        href="#"
                         class="icon-hamburger header__hamburger-icon"
                         aria-label="Menu icon used to open a list of menu items"
                     ></button>
