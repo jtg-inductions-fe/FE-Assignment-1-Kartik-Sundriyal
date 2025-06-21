@@ -12,9 +12,9 @@
     }
 
     @include respond-to(desktop) {
-        margin: 2.125rem 6.1rem 0;
-        margin-left: 9.35rem;
-        padding: 2rem 0;
+        margin: px-to-rem(34 98.22 0);
+        margin-left: px-to-rem(149.13);
+        padding: px-to-rem(32) 0;
     }
 
     &__nav {
@@ -156,7 +156,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: center;
-            gap: 4rem;
+            gap: px-to-rem(64);
             background-color: transparent;
             padding: 0;
         }
@@ -164,7 +164,7 @@
 
     &__nav-link {
         font-size: inherit;
-        padding: 0.5rem;
+        padding: px-to-rem(8);
         border-bottom: solid px-to-rem(2) $color-text-x-light;
         color: $color-text-light;
         display: block;

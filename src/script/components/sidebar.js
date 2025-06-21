@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     menuBtn.addEventListener('click', () => {
-        if (window.getComputedStyle(navMenu).position === 'absolute') {
+        if (window.matchMedia('(max-width: 1024px)').matches) {
             navMenu.classList.toggle('header__menubar--visible');
         } else navLinks.classList.toggle('header__nav-links--visible');
 
@@ -21,10 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedMenuBtn = menuBtn.contains(e.target);
 
         if (!clickedInsideSidebar && !clickedMenuBtn) {
-            if (window.getComputedStyle(navMenu).position === 'absolute') {
+            if (window.matchMedia('(max-width: 1024px)').matches) {
                 navMenu.classList.remove('header__menubar--visible');
             } else navLinks.classList.remove('header__nav-links--visible');
-            menuBtn.classList.toggle('icon-cross');
+            menuBtn.classList.remove('icon-cross');
+            menuBtn.setAttribute('aria-expanded', 'false');
         }
     });
 });
