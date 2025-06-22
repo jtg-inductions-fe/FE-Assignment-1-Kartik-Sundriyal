@@ -1,8 +1,13 @@
 @use '../abstracts/variables' as *;
 
 // Global body text styling
-body {
+.body {
     font-family: $font-primary;
     font-size: $font-size-base;
     background-color: $color-white;
+
+    &--no-scroll {
+        overflow-y: hidden;
+        width: 100%;
+    }
 }
