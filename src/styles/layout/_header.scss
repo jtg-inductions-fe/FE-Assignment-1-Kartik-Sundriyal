@@ -178,7 +178,6 @@
         }
 
         @include respond-to(desktop) {
-            padding: 0;
             border: none;
             background-color: transparent;
             display: inline;

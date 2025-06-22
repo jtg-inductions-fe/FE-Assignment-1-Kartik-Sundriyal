@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.setAttribute('aria-hidden', 'true');
             navLinks.setAttribute('aria-hidden', 'true');
             removeFocusTrap();
+            document.body.classList.remove('body--no-scroll');
         }
     });
 
