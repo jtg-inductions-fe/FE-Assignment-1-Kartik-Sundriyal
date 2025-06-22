@@ -14,10 +14,10 @@ $breakpoints: (
 ///
 /// @content - The CSS rules to include within the media query.
 ///
-@mixin respond-to($breakpoint) {
+@mixin respond-to($breakpoint, $width-type: min-width) {
     $size: map-get($breakpoints, $breakpoint);
     @if $size {
-        @media (min-width: $size) {
+        @media ($width-type: $size) {
             @content;
         }
     } @else {
@@ -79,10 +79,9 @@ $breakpoints: (
     font-size: $font-size-md;
     top: 100%;
     border-radius: px-to-rem(8);
-    background-color: $color-text-x-light;
+    background-color: rgba(255, 86, 34, 0.417);
     transform: translateX(100%);
     overflow: hidden;
     transition: all 0.4s ease-in-out;
     visibility: hidden;
-    pointer-events: none;
 }

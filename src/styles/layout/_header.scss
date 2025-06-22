@@ -90,7 +90,7 @@
         @include invisible;
         border: none;
         left: 100vw;
-        height: 50vh;
+        height: 40vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -100,9 +100,7 @@
         &--visible {
             visibility: visible;
             left: 100%;
-            pointer-events: auto;
             transform: translateX(-100%);
-            @include transition(transform, 0.4s, ease-in-out);
         }
 
         @include respond-to(tablet) {
@@ -133,13 +131,11 @@
             height: 50vh;
             padding: px-to-rem(16);
             transform: translateX(0);
-            @include transition(all, 0.4s, ease-in-out);
             width: 30%;
 
             &--visible {
                 visibility: visible;
                 right: 100%;
-                pointer-events: auto;
                 transform: translateX(100%);
             }
         }
@@ -169,6 +165,7 @@
         color: $color-text-light;
         display: block;
         cursor: pointer;
+        text-align: center;
 
         &--active {
             color: $color-dark;
@@ -195,12 +192,16 @@
         display: flex;
         justify-content: center;
         row-gap: px-to-rem(10);
-        column-gap: px-to-rem(12);
-        flex-wrap: wrap;
+        column-gap: px-to-rem(8);
+
+        @include respond-to(mobile, max-width) {
+            flex-wrap: wrap;
+        }
+
         @include respond-to(tablet) {
-            display: flex;
             align-items: center;
-            gap: px-to-rem(8);
+            column-gap: 0;
+            gap: px-to-rem(6);
             justify-content: flex-end;
             order: 2;
         }
