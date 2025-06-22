@@ -3,8 +3,7 @@
 @use '../abstracts/functions' as *;
 
 .header {
-    padding: px-to-rem(35) 0;
-    margin: 0 px-to-rem(16);
+    margin: px-to-rem(35 16);
 
     @include respond-to(tablet) {
         margin: 0 px-to-rem(64);
