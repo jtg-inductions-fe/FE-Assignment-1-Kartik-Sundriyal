@@ -62,6 +62,6 @@ h3 {
     text-align: center;
 
     @include respond-to(tablet) {
-        font-size: px-to-rem(18);
+        font-size: $font-size-description-md;
     }
 }
