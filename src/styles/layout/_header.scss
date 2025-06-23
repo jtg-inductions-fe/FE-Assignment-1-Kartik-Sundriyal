@@ -90,12 +90,9 @@
         @include invisible;
         border: none;
         left: 100vw;
-        height: 40vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
         padding: px-to-rem(16);
-        width: 50%;
 
         &--visible {
             visibility: visible;
@@ -124,12 +121,12 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        gap: px-to-rem(16);
 
         @include respond-to(tablet) {
             @include invisible;
+            gap: px-to-rem(40);
             right: 100vw;
-            height: 50vh;
             padding: px-to-rem(16);
             transform: translateX(0);
             width: 30%;
@@ -163,20 +160,13 @@
         font-size: inherit;
         padding: px-to-rem(8);
         border-bottom: solid px-to-rem(2) $color-text-x-light;
-        color: $color-text-light;
         display: block;
         cursor: pointer;
         text-align: center;
-
-        &--active {
-            color: $color-dark;
-        }
-
-        &:hover {
-            color: $color-primary;
-        }
+        border-radius: px-to-rem(8);
 
         @include respond-to(desktop) {
+            color: $color-text-light;
             border: none;
             background-color: transparent;
             display: inline;
@@ -184,6 +174,19 @@
 
             &:hover {
                 background-color: transparent;
+            }
+        }
+        &--active {
+            color: $color-dark;
+            background-color: $color-white;
+        }
+
+        &:hover {
+            color: $color-dark;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            @include respond-to(desktop) {
+                color: $color-primary;
             }
         }
     }
