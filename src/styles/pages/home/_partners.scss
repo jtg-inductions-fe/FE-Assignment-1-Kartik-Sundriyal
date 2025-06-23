@@ -1,0 +1,52 @@
+@use '../../abstracts/variables' as *;
+@use '../../abstracts/mixins' as *;
+@use '../../abstracts/functions' as *;
+
+.partners {
+    display: flex;
+    column-gap: px-to-rem(27);
+    row-gap: px-to-rem(32);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: px-to-rem(64 16);
+    position: relative;
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(32 64 0);
+        padding: px-to-rem(64 160);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(0 123);
+        padding: px-to-rem(64 0);
+        column-gap: px-to-rem(96);
+    }
+
+    &__partner {
+        height: px-to-rem(20);
+
+        @include respond-to(tablet) {
+            height: px-to-rem(32);
+        }
+    }
+}
+
+.arrows {
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
+
+    @include respond-to(tablet) {
+        visibility: visible;
+        left: px-to-rem(-26);
+        top: px-to-rem(-46.3);
+        transform: translateY(-100%);
+    }
+
+    @include respond-to(desktop) {
+        left: px-to-rem(-20);
+        top: px-to-rem(-120);
+        transform: translateX(-100%);
+    }
+}
