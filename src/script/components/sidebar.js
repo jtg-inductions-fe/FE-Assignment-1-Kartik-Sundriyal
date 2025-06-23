@@ -95,4 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.add('header--sticky');
         } else header.classList.remove('header--sticky');
     });
+
+    requestAnimationFrame(() => {
+        document
+            .querySelector('.header__nav-links')
+            .classList.add('header__nav-links--is-loaded');
+        document
+            .querySelector('.header__menubar')
+            .classList.add('header__menubar--is-loaded');
+    });
 });

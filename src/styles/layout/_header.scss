@@ -2,6 +2,33 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/functions' as *;
 
+/// Adds the invisible state styles to the sidebar before making it visible on the screen.
+///
+@mixin hidden-menu() {
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
+    font-size: $font-size-base;
+    border-radius: px-to-rem(8);
+    background-color: $color-blue-charcoal;
+    color: $color-white;
+    width: 0;
+    height: 0;
+    padding: px-to-rem(16);
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin is-loaded() {
+    &--is-loaded {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
 .header {
     padding: px-to-rem(35 16);
     position: sticky;
@@ -88,16 +115,17 @@
     }
 
     &__menubar {
-        @include invisible;
-        right: -100%;
-        display: flex;
-        flex-direction: column;
-        padding: px-to-rem(16);
+        @include hidden-menu;
+        right: 0;
 
         &--visible {
-            right: px-to-rem(10);
-            visibility: visible;
+            width: 18rem;
+            height: 20rem;
+            opacity: 1;
+            pointer-events: auto;
         }
+
+        @include is-loaded;
 
         @include respond-to(tablet) {
             all: unset;
@@ -116,20 +144,22 @@
     }
 
     &__nav-links {
-        flex: 1;
         display: flex;
         flex-direction: column;
+        flex: 1;
         gap: px-to-rem(16);
-
         @include respond-to(tablet) {
-            @include invisible;
+            @include hidden-menu;
             gap: px-to-rem(40);
-            left: -100%;
-            padding: px-to-rem(16);
+            left: 0;
+
+            @include is-loaded;
 
             &--visible {
-                visibility: visible;
-                left: px-to-rem(50);
+                height: 25rem;
+                width: 22rem;
+                opacity: 1;
+                pointer-events: auto;
             }
         }
 
@@ -173,6 +203,10 @@
         &--active {
             color: $color-dark;
             background-color: $color-white;
+
+            @include respond-to(desktop) {
+                background-color: transparent;
+            }
         }
 
         &:hover {
@@ -181,6 +215,7 @@
 
             @include respond-to(desktop) {
                 color: $color-primary;
+                background-color: transparent;
             }
         }
     }
@@ -205,7 +240,6 @@
     }
 
     &--sticky {
-        background-color: $color-white;
-        overflow: hidden;
+        backdrop-filter: blur(4px);
     }
 }
