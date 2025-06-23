@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.header__menubar');
     const navLinks = document.querySelector('.header__nav-links');
     const menuBtn = document.querySelector('.header__hamburger-icon');
+    const header = document.querySelector('.header');
 
     if (!navMenu || !navLinks || !menuBtn) {
         return;
@@ -54,9 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedMenuBtn = menuBtn.contains(e.target);
 
         if (!clickedInsideSidebar && !clickedMenuBtn) {
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                navMenu.classList.remove('header__menubar--visible');
-            } else navLinks.classList.remove('header__nav-links--visible');
+            navLinks.classList.remove('header__nav-links--visible');
+            navMenu.classList.remove('header__menubar--visible');
 
             menuBtn.classList.remove('icon-cross');
             menuBtn.classList.add('icon-hamburger');
@@ -87,5 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.setAttribute('aria-hidden', 'false');
             navLinks.setAttribute('aria-hidden', 'false');
         }
+    });
+
+    //Making header sticky
+    document.addEventListener('scroll', () => {
+        if (window.scrollY > 0) {
+            header.classList.add('header--sticky');
+        } else header.classList.remove('header--sticky');
     });
 });

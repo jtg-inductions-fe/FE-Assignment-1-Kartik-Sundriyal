@@ -3,17 +3,18 @@
 @use '../abstracts/functions' as *;
 
 .header {
-    margin: px-to-rem(35 16);
+    padding: px-to-rem(35 16);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     @include respond-to(tablet) {
-        margin: 0 px-to-rem(64);
-        padding: px-to-rem(32) 0;
+        padding: px-to-rem(32 64);
     }
 
     @include respond-to(desktop) {
-        margin: px-to-rem(34 98.22 0);
-        margin-left: px-to-rem(149.13);
-        padding: px-to-rem(32) 0;
+        margin-top: px-to-rem(34);
+        padding: px-to-rem(32 123);
     }
 
     &__nav {
@@ -88,17 +89,14 @@
 
     &__menubar {
         @include invisible;
-        border: none;
-        left: 100vw;
+        right: -100%;
         display: flex;
         flex-direction: column;
         padding: px-to-rem(16);
 
         &--visible {
+            right: px-to-rem(10);
             visibility: visible;
-            left: 100%;
-            transform: translateX(-100%);
-            backdrop-filter: blur(px-to-rem(10));
         }
 
         @include respond-to(tablet) {
@@ -126,15 +124,12 @@
         @include respond-to(tablet) {
             @include invisible;
             gap: px-to-rem(40);
-            right: 100vw;
+            left: -100%;
             padding: px-to-rem(16);
-            transform: translateX(0);
-            width: 30%;
 
             &--visible {
                 visibility: visible;
-                right: 100%;
-                transform: translateX(100%);
+                left: px-to-rem(50);
             }
         }
 
@@ -144,8 +139,6 @@
             position: static;
             margin: 0 auto;
             height: auto;
-            transform: none;
-            transition: none;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -176,6 +169,7 @@
                 background-color: transparent;
             }
         }
+
         &--active {
             color: $color-dark;
             background-color: $color-white;
@@ -208,5 +202,10 @@
             justify-content: flex-end;
             order: 2;
         }
+    }
+
+    &--sticky {
+        background-color: $color-white;
+        overflow: hidden;
     }
 }

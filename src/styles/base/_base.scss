@@ -8,7 +8,7 @@
     background-color: $color-white;
 
     &--no-scroll {
-        overflow-y: hidden;
+        overflow: hidden;
         width: 100%;
     }
     &__main {
@@ -20,9 +20,4 @@
             }
         }
     }
-}
-
-html,
-body {
-    overflow-x: hidden;
 }
