@@ -26,6 +26,7 @@ h3 {
     font-family: $font-primary;
     font-weight: 700;
     line-height: $line-height-base;
+    color: $color-black;
 }
 
 .heading-xl {
@@ -41,7 +42,17 @@ h3 {
 }
 
 .heading-lg {
-    font-size: $font-size-heading-2-xl;
+    font-size: $font-size-heading-2-sm;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-heading-2-md;
+    }
+
+    @include respond-to(desktop) {
+        font-size: $font-size-heading-2-lg;
+        text-align: left;
+    }
 }
 
 .heading-md {
@@ -50,6 +61,18 @@ h3 {
 
 .heading-sm {
     font-size: $font-size-heading-3-sm;
+}
+
+.heading-section {
+    color: $color-secondary;
+    font-size: $font-size-base;
+    font-weight: 700;
+    line-height: $line-height-base;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    @include respond-to(tablet) {
+        font-size: $font-size-md;
+    }
 }
 
 .description {

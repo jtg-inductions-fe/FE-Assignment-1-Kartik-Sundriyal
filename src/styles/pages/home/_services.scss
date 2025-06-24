@@ -1,0 +1,78 @@
+@use '../../abstracts' as *;
+
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(32);
+    margin: px-to-rem(64 16);
+
+    @include respond-to(tablet) {
+        gap: px-to-rem(64);
+        margin: px-to-rem(0 64);
+        padding: px-to-rem(64 0);
+    }
+
+    @include respond-to(desktop) {
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+        margin: px-to-rem(0 123);
+        // gap: px-to-rem(64);
+
+        &__card:last-child {
+            display: none;
+        }
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: px-to-rem(16);
+
+        @include respond-to(desktop) {
+            align-items: flex-start;
+            text-align: left;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(16);
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+        }
+
+        @include respond-to(desktop) {
+            gap: px-to-rem(21);
+        }
+    }
+
+    &__card-image {
+        display: inline-block;
+    }
+
+    &__card-body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+    }
+
+    &__card-heading {
+        font-size: px-to-rem(24);
+        text-align: center;
+
+        @include respond-to(tablet) {
+            font-size: px-to-rem(28);
+        }
+    }
+
+    &__card-description {
+        @include respond-to(mobile) {
+            font-size: px-to-rem(18);
+        }
+    }
+}

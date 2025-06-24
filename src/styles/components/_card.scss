@@ -1,0 +1,35 @@
+@use '../abstracts' as *;
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: px-to-rem(32);
+    padding: px-to-rem(32);
+    border: solid 1px $color-black-light;
+    border-radius: px-to-rem(32);
+    background-color: $color-white;
+
+    &--lg {
+        @include respond-to(tablet) {
+            padding: px-to-rem(64);
+            padding-bottom: px-to-rem(35);
+            gap: px-to-rem(64);
+        }
+
+        @include respond-to(desktop) {
+            padding-bottom: px-to-rem(98);
+        }
+    }
+
+    &--unbordered {
+        border: none;
+    }
+
+    &:hover {
+        box-shadow:
+            0px 0px 0px 0px rgba(0, 0, 0, 0.1),
+            0px 41px 89px 0px rgba(0, 0, 0, 0.1);
+    }
+}
