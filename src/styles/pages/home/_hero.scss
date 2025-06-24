@@ -5,7 +5,7 @@
 .hero {
     display: flex;
     flex-direction: column;
-    margin: px-to-rem(64 16);
+    margin: px-to-rem(29 16 64);
     gap: px-to-rem(32);
 
     @include respond-to(tablet) {
