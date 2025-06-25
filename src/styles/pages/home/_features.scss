@@ -1,0 +1,112 @@
+@use '../../abstracts' as *;
+
+.features {
+    margin: px-to-rem(0 40);
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(107);
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(0 64);
+        padding: px-to-rem(64 32);
+        gap: px-to-rem(70);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(0 123);
+        padding: px-to-rem(64 0);
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__image {
+        @include respond-to(tablet) {
+            padding: px-to-rem(0 69);
+        }
+        @include respond-to(desktop) {
+            order: 1;
+            padding: 0;
+            width: 50%;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+        padding: px-to-rem(0 8);
+
+        @include respond-to(tablet) {
+            gap: px-to-rem(64);
+            padding: 0;
+        }
+
+        @include respond-to(desktop) {
+            width: 50%;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        @include respond-to(desktop) {
+            .description {
+                text-align: left;
+                padding-right: px-to-rem(16);
+            }
+        }
+    }
+
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(16);
+        align-items: center;
+
+        @include respond-to(desktop) {
+            align-items: flex-start;
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(8);
+
+        @include respond-to(tablet) {
+            gap: 0;
+        }
+    }
+
+    &__card {
+        align-items: flex-start;
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__icons {
+        font-size: px-to-rem(100);
+    }
+
+    &__card-body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(8);
+    }
+
+    &__card-heading {
+        font-size: px-to-rem(23);
+    }
+
+    &__card-description {
+        text-align: left;
+        @include respond-to(mobile) {
+            font-size: px-to-rem(18);
+        }
+    }
+}
