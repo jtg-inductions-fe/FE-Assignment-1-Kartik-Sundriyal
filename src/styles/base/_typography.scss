@@ -60,6 +60,7 @@ h3 {
     line-height: $line-height-description;
     letter-spacing: 0;
     text-align: center;
+    max-width: px-to-rem(640);
 
     @include respond-to(tablet) {
         font-size: $font-size-description-md;
