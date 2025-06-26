@@ -16,7 +16,7 @@
     <body class="body">
         <div class="container">
             <!-- Header -->
-            <div class="ellipse" role="presentation"></div>
+            <div class="ellipse ellipse--orange" role="presentation"></div>
             <header class="header">
                 <nav class="header__nav">
                     <a
@@ -80,13 +80,27 @@
             <main class="body__main">
                 <section class="hero">
                     <div class="hero__image">
-                        <img src="/assets/images/hero-image.png" alt="" />
+                        <picture>
+                            <source
+                                media="(min-width:1440px)"
+                                srcset="/assets/images/hero/hero-desktop.png"
+                            />
+                            <source
+                                media="(min-width:1024px)"
+                                srcset="/assets/images/hero/hero-tablet.png"
+                            />
+                            <img
+                                src="/assets/images/hero/hero-mobile.png"
+                                alt="Hero image as a collage of top travel destinations."
+                            />
+                        </picture>
                     </div>
                     <div class="hero__body">
                         <div class="hero__content">
                             <div class="hero__heading">
                                 <div class="hero__heading-tag">
-                                    <span class="hero__text-span"
+                                    <span
+                                        class="hero__text-span hero__highlight"
                                         >Explore the world!</span
                                     >
                                     <span
@@ -94,24 +108,29 @@
                                     ></span>
                                 </div>
                                 <h1 class="heading-xl">
-                                    Travel <span>top destination</span> of the
-                                    world
+                                    Travel
+                                    <span class="hero__highlight"
+                                        >top destination</span
+                                    >
+                                    of the world
                                 </h1>
                             </div>
-                            <div class="description hero__desc">
+                            <p class="description hero__desc">
                                 We always make our customer happy by providing
                                 as many choices as possible
-                            </div>
+                            </p>
                         </div>
                         <div class="hero__button-group">
                             <a
                                 href="#"
                                 class="button button--primary button--lg button--drop-shadow"
+                                aria-label="Get Started"
                                 >Get Started</a
                             >
                             <a
                                 href="#"
                                 class="button button--secondary button--outline button--lg"
+                                aria-label="Watch Demo"
                                 ><span class="icon-play hero__icons"></span
                                 ><span class="hero__text-span">Watch Demo</span>
                             </a>

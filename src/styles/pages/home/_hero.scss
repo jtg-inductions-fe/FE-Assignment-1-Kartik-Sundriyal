@@ -2,6 +2,14 @@
 @use '../../abstracts/functions' as *;
 @use '../../abstracts/mixins' as *;
 
+$box-shadow-tag:
+    px-to-rem(0 0 0 0) rgba(0, 0, 0, 0.07),
+    px-to-rem(0 34 75 0) rgba(0, 0, 0, 0.07),
+    px-to-rem(0 137 137 0) rgba(0, 0, 0, 0.06),
+    px-to-rem(0 308 185 0) rgba(0, 0, 0, 0.04),
+    px-to-rem(0 548 219 0) rgba(0, 0, 0, 0.01),
+    px-to-rem(0 856 240 0) rgba(0, 0, 0, 0);
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -82,10 +90,10 @@
             align-items: flex-start;
             text-align: left;
         }
+    }
 
-        & span {
-            color: $color-secondary;
-        }
+    &__highlight {
+        color: $color-secondary;
     }
 
     &__heading-tag {
@@ -98,13 +106,7 @@
         font-family: $font-primary;
         font-size: $font-size-sm;
 
-        box-shadow:
-            0px 0px 0px 0px rgba(0, 0, 0, 0.07),
-            0px 34px 75px 0px rgba(0, 0, 0, 0.07),
-            0px 137px 137px 0px rgba(0, 0, 0, 0.06),
-            0px 308px 185px 0px rgba(0, 0, 0, 0.04),
-            0px 548px 219px 0px rgba(0, 0, 0, 0.01),
-            0px 856px 240px 0px rgba(0, 0, 0, 0);
+        box-shadow: $box-shadow-tag;
     }
 
     &__desc {

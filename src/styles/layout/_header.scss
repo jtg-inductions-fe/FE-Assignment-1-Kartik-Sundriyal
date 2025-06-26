@@ -34,6 +34,7 @@
     top: 0;
     z-index: $z-index-sticky;
     backdrop-filter: blur(px-to-rem(4));
+    width: 100%;
 
     @include respond-to(tablet) {
         padding: px-to-rem(32 64);

@@ -4,26 +4,29 @@
 
 .ellipse {
     position: absolute;
-    width: px-to-rem(272);
-    height: px-to-rem(348);
-    left: px-to-rem(-33);
-    top: px-to-rem(-36);
-    background: $color-orange;
     opacity: 0.5;
     filter: blur(px-to-rem(167.5));
+    width: px-to-rem(272);
+    height: px-to-rem(348);
 
-    @include respond-to(tablet) {
-        width: px-to-rem(500);
-        height: px-to-rem(500);
-        left: px-to-rem(-163);
-        top: px-to-rem(-174);
-        filter: blur(px-to-rem(250));
-    }
+    &--orange {
+        left: px-to-rem(-33);
+        top: px-to-rem(-36);
+        background: $color-orange;
 
-    @include respond-to(desktop) {
-        width: px-to-rem(503);
-        height: px-to-rem(494);
-        top: px-to-rem(42.91);
-        left: px-to-rem(-70.99);
+        @include respond-to(tablet) {
+            width: px-to-rem(500);
+            height: px-to-rem(500);
+            left: px-to-rem(-163);
+            top: px-to-rem(-174);
+            filter: blur(px-to-rem(250));
+        }
+
+        @include respond-to(desktop) {
+            width: px-to-rem(503);
+            height: px-to-rem(494);
+            top: px-to-rem(42.91);
+            left: px-to-rem(-70.99);
+        }
     }
 }
