@@ -117,7 +117,7 @@
             height: px-to-rem(320);
             opacity: 1;
             pointer-events: auto;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
 
         @include is-loaded;
@@ -156,7 +156,7 @@
                 width: px-to-rem(352);
                 opacity: 1;
                 pointer-events: auto;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
         }
 
@@ -178,12 +178,16 @@
 
     &__link {
         font-size: inherit;
-        padding: px-to-rem(8);
         border-bottom: solid px-to-rem(2) $color-text-x-light;
         display: block;
         cursor: pointer;
         text-align: center;
         border-radius: px-to-rem(8);
+
+        & a {
+            padding: px-to-rem(8);
+            display: block;
+        }
 
         @include respond-to(desktop) {
             color: $color-text-light;

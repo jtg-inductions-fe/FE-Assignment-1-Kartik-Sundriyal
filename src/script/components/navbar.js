@@ -3,7 +3,8 @@ import trapFocus from '../utils/focusTrap';
 document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.header__menubar');
     const navLinks = document.querySelector('.header__links');
-    const menuBtn = document.querySelector('.header__hamburger-icon');
+    const menuBtn = document.querySelector('.header__icon-wrapper');
+    const hamIcon = document.querySelector('.header__hamburger-icon');
     const header = document.querySelector('.header');
     const menuBtnWrapper = document.querySelector('.header__icon-wrapper');
     const bodyMain = document.querySelector('.body__main');
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         bodyMain.classList.remove('body__main--blur');
 
-        menuBtn.classList.replace('icon-cross', 'icon-hamburger');
+        hamIcon.classList.replace('icon-cross', 'icon-hamburger');
         navMenu.classList.remove('header__menubar--visible');
         navLinks.classList.remove('header__links--visible');
         menuBtn.setAttribute('aria-expanded', 'false');
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     menuBtn.addEventListener('click', () => {
-        const isOpen = menuBtn.classList.contains('icon-cross');
+        const isOpen = hamIcon.classList.contains('icon-cross');
 
         if (isOpen) {
             closeMenu();
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             navLinks.setAttribute('aria-hidden', 'false');
             navMenu.setAttribute('aria-hidden', 'false');
-            menuBtn.classList.replace('icon-hamburger', 'icon-cross');
+            hamIcon.classList.replace('icon-hamburger', 'icon-cross');
             menuBtn.setAttribute('aria-expanded', 'true');
             document.body.classList.add('body--no-scroll');
             bodyMain.classList.add('body__main--blur');
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mobile = window.matchMedia('(max-width: 1024px)');
     mobile.addEventListener('change', () => {
-        if (menuBtn.classList.contains('icon-cross')) {
+        if (hamIcon.classList.contains('icon-cross')) {
             navMenu.classList.add('header__menubar--visible');
             navLinks.classList.add('header__links--visible');
             navMenu.setAttribute('aria-hidden', 'false');
