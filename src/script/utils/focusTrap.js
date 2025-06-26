@@ -1,8 +1,7 @@
 //Focus trapping:
-const focusableSelectors =
-    'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
+const focusableSelectors = 'a, button, input, [tabindex]:not([tabindex="-1"])';
 
-export default function trapFocus(element) {
+const trapFocus = (element, callback, returnFocusEl) => {
     const focusableEls = element.querySelectorAll(focusableSelectors);
     const firstEl = focusableEls[0];
     const lastEl = focusableEls[focusableEls.length - 1];
@@ -22,15 +21,18 @@ export default function trapFocus(element) {
                     firstEl.focus();
                 }
             }
+        } else if (e.key === 'Escape') {
+            callback();
+            returnFocusEl.focus();
         }
     }
 
     element.addEventListener('keydown', handleKeyDown);
-    setTimeout(() => {
-        element.focus();
-    }, 400);
+    element.focus();
     element.dataset.trapFocus = 'true';
 
     // Cleanup
     return () => element.removeEventListener('keydown', handleKeyDown);
-}
+};
+
+export default trapFocus;

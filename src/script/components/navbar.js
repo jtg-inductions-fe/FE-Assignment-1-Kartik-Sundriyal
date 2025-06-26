@@ -2,9 +2,10 @@ import trapFocus from '../utils/focusTrap';
 
 document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.querySelector('.header__menubar');
-    const navLinks = document.querySelector('.header__nav-links');
+    const navLinks = document.querySelector('.header__links');
     const menuBtn = document.querySelector('.header__hamburger-icon');
     const header = document.querySelector('.header');
+    const menuBtnWrapper = document.querySelector('.header__icon-wrapper');
 
     if (!navMenu || !navLinks || !menuBtn) {
         return;
@@ -12,36 +13,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let removeFocusTrap = () => {};
 
+    const closeMenu = () => {
+        removeFocusTrap();
+        document.body.classList.remove('body--no-scroll');
+        document
+            .querySelector('.body__main')
+            .classList.remove('body__main--blur');
+
+        menuBtn.classList.replace('icon-cross', 'icon-hamburger');
+        navMenu.classList.remove('header__menubar--visible');
+        navLinks.classList.remove('header__links--visible');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        if (window.matchMedia('(max-width: 1023px)').matches) {
+            navMenu.setAttribute('aria-hidden', 'true');
+        }
+        navLinks.setAttribute('aria-hidden', 'true');
+    };
+
     menuBtn.addEventListener('click', () => {
         const isOpen = menuBtn.classList.contains('icon-cross');
 
         if (isOpen) {
-            menuBtn.classList.remove('icon-cross');
-            menuBtn.classList.add('icon-hamburger');
-            navMenu.classList.remove('header__menubar--visible');
-            navLinks.classList.remove('header__nav-links--visible');
-            if (window.matchMedia('(max-width: 1023px)').matches) {
-                navMenu.setAttribute('aria-hidden', 'true');
-            }
-            navLinks.setAttribute('aria-hidden', 'true');
-            removeFocusTrap();
-            document.body.classList.remove('body--no-scroll');
-            document
-                .querySelector('.body__main')
-                .classList.remove('body__main--blur');
+            closeMenu();
         } else {
             if (window.matchMedia('(max-width: 1023px)').matches) {
                 navMenu.classList.add('header__menubar--visible');
-                removeFocusTrap = trapFocus(navMenu);
+                removeFocusTrap = trapFocus(navMenu, closeMenu, menuBtnWrapper);
             } else {
-                navLinks.classList.toggle('header__nav-links--visible');
-                removeFocusTrap = trapFocus(navLinks);
+                navLinks.classList.add('header__links--visible');
+                removeFocusTrap = trapFocus(
+                    navLinks,
+                    closeMenu,
+                    menuBtnWrapper,
+                );
             }
             navLinks.setAttribute('aria-hidden', 'false');
             navMenu.setAttribute('aria-hidden', 'false');
-
-            menuBtn.classList.add('icon-cross');
-            menuBtn.classList.remove('icon-hamburger');
+            menuBtn.classList.replace('icon-hamburger', 'icon-cross');
+            menuBtn.setAttribute('aria-expanded', 'true');
             document.body.classList.add('body--no-scroll');
             document
                 .querySelector('.body__main')
@@ -55,19 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedMenuBtn = menuBtn.contains(e.target);
 
         if (!clickedInsideSidebar && !clickedMenuBtn) {
-            navLinks.classList.remove('header__nav-links--visible');
-            navMenu.classList.remove('header__menubar--visible');
-
-            menuBtn.classList.remove('icon-cross');
-            menuBtn.classList.add('icon-hamburger');
-            menuBtn.setAttribute('aria-expanded', 'false');
-            navMenu.setAttribute('aria-hidden', 'true');
-            navLinks.setAttribute('aria-hidden', 'true');
-            removeFocusTrap();
-            document.body.classList.remove('body--no-scroll');
-            document
-                .querySelector('.body__main')
-                .classList.remove('body__main--blur');
+            closeMenu();
         }
     });
 
@@ -75,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobile.addEventListener('change', () => {
         if (menuBtn.classList.contains('icon-cross')) {
             navMenu.classList.add('header__menubar--visible');
-            navLinks.classList.add('header__nav-links--visible');
+            navLinks.classList.add('header__links--visible');
             navMenu.setAttribute('aria-hidden', 'false');
             navLinks.setAttribute('aria-hidden', 'false');
         }
@@ -98,8 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(() => {
         document
-            .querySelector('.header__nav-links')
-            .classList.add('header__nav-links--is-loaded');
+            .querySelector('.header__links')
+            .classList.add('header__links--is-loaded');
         document
             .querySelector('.header__menubar')
             .classList.add('header__menubar--is-loaded');

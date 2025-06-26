@@ -7,54 +7,101 @@
             content="Travelog helps you travel the top destinations of the world with ease and comfort."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/assets/fav-icon.svg" type="image/svg+xml" />
-        <title>Explore the Globe | Best Destinations</title>
+
+        <!-- Standard favicon -->
+        <link rel="icon" href="/assets/favicons/favicon.ico" />
+
+        <!-- PNG favicons for modern browsers -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/assets/favicons/favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/favicon-32x32.png"
+        />
+
+        <!-- Android Chrome (Home screen) -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/assets/favicons/android-chrome-192x192.png"
+        />
+
+        <!-- Apple iOS (Home screen icon) -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/favicons/apple-touch-icon.png"
+        />
+        <title>Travlog | Explore the Globe | Best Destinations</title>
     </head>
     <body class="body">
-        <header class="header">
-            <nav class="header__nav">
-                <span class="header__icons header__logo-wrapper">
+        <div class="container">
+            <header class="header">
+                <nav class="header__nav">
                     <a
-                        href="#"
-                        class="icon-app-logo header__logo"
-                        aria-label="Travelog App logo"
-                    ></a>
-                </span>
-                <div
-                    class="header__menubar"
-                    role="region"
-                    aria-label="Navigation menu"
-                    tabindex="-1"
-                >
-                    <ul class="header__nav-links" tabindex="-1">
-                        <li class="header__nav-link header__nav-link--active">
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="header__nav-link">
-                            <a href="#">Discover</a>
-                        </li>
-                        <li class="header__nav-link">
-                            <a href="#">Special Deals</a>
-                        </li>
-                        <li class="header__nav-link">
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <div class="header__btn-group">
-                        <a href="#" class="button button--secondary">Log In</a>
-                        <a href="#" class="button button--primary">Sign Up</a>
+                        href="/"
+                        aria-label="Travlog App logo"
+                        class="header__icons header__logo-wrapper"
+                    >
+                        <i class="icon-app-logo header__logo"></i>
+                    </a>
+                    <div
+                        class="header__menubar"
+                        role="region"
+                        aria-label="Navigation menu"
+                        tabindex="-1"
+                    >
+                        <ul class="header__links" tabindex="-1">
+                            <li class="header__link header__link--active">
+                                <a href="/" aria-label="Home">Home</a>
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Discover">Discover</a>
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Special Deals"
+                                    >Special Deals</a
+                                >
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Contact">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="header__btn-group">
+                            <a
+                                href="/"
+                                class="button button--secondary"
+                                aria-label="Log in"
+                                >Log In</a
+                            >
+                            <a
+                                href="/"
+                                class="button button--primary"
+                                aria-label="Sign up"
+                                >Sign Up</a
+                            >
+                        </div>
                     </div>
-                </div>
-
-                <span class="header__icons header__icon-wrapper">
                     <button
-                        class="icon-hamburger header__hamburger-icon"
-                        aria-label="Menu icon used to open a list of menu items"
-                    ></button>
-                </span>
-            </nav>
-        </header>
-        <main class="body__main"></main>
+                        class="header__icons header__icon-wrapper"
+                        aria-expanded="false"
+                    >
+                        <i
+                            class="icon-hamburger header__hamburger-icon"
+                            aria-label="Menu icon used to open a list of menu items"
+                        ></i>
+                    </button>
+                </nav>
+            </header>
+            <main class="body__main"></main>
+        </div>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

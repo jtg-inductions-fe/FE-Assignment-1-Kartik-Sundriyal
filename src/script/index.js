@@ -1,2 +1,2 @@
 import '../styles/main.scss';
-import '../script/components/sidebar';
+import './components/navbar';
