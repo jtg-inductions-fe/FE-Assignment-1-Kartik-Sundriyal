@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuBtn = document.querySelector('.header__hamburger-icon');
     const header = document.querySelector('.header');
     const menuBtnWrapper = document.querySelector('.header__icon-wrapper');
+    const bodyMain = document.querySelector('.body__main');
 
     if (!navMenu || !navLinks || !menuBtn) {
         return;
@@ -16,9 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
         removeFocusTrap();
         document.body.classList.remove('body--no-scroll');
-        document
-            .querySelector('.body__main')
-            .classList.remove('body__main--blur');
+
+        bodyMain.classList.remove('body__main--blur');
 
         menuBtn.classList.replace('icon-cross', 'icon-hamburger');
         navMenu.classList.remove('header__menubar--visible');
@@ -52,9 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menuBtn.classList.replace('icon-hamburger', 'icon-cross');
             menuBtn.setAttribute('aria-expanded', 'true');
             document.body.classList.add('body--no-scroll');
-            document
-                .querySelector('.body__main')
-                .classList.add('body__main--blur');
+            bodyMain.classList.add('body__main--blur');
         }
     });
 

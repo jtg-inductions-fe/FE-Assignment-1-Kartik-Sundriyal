@@ -14,7 +14,7 @@
 
     &__main {
         &--blur {
-            filter: blur(2px);
+            filter: blur(px-to-rem(2));
 
             @include respond-to(desktop) {
                 filter: none;
