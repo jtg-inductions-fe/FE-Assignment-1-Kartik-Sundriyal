@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeMenu = () => {
         removeFocusTrap();
         document.body.classList.remove('body--no-scroll');
-
         bodyMain.classList.remove('body__main--blur');
-
         hamIcon.classList.replace('icon-cross', 'icon-hamburger');
         navMenu.classList.remove('header__menubar--visible');
         navLinks.classList.remove('header__links--visible');
