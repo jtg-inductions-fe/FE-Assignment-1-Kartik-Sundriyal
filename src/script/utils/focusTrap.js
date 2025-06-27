@@ -1,4 +1,3 @@
-//Focus trapping:
 const focusableSelectors = 'a, button, input, [tabindex]:not([tabindex="-1"])';
 
 const trapFocus = (element, callback, returnFocusEl) => {

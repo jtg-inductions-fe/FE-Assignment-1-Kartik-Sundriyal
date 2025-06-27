@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.header__links');
     const menuBtn = document.querySelector('.header__icon-wrapper');
     const hamIcon = document.querySelector('.header__hamburger-icon');
-    const header = document.querySelector('.header');
     const menuBtnWrapper = document.querySelector('.header__icon-wrapper');
     const bodyMain = document.querySelector('.body__main');
 
@@ -81,13 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.setAttribute('aria-hidden', 'false');
             navLinks.setAttribute('aria-hidden', 'false');
         }
-    });
-
-    //Making header sticky
-    document.addEventListener('scroll', () => {
-        if (window.scrollY > 0) {
-            header.classList.add('header--sticky');
-        } else header.classList.remove('header--sticky');
     });
 
     requestAnimationFrame(() => {

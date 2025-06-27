@@ -12,12 +12,7 @@
     border: none;
     border-radius: px-to-rem(100);
     cursor: pointer;
-    min-width: 40%;
     @include transition(background-color, 0.2s, ease);
-
-    @include respond-to(mobile, max-width) {
-        width: 100%;
-    }
 
     @include respond-to(tablet) {
         padding: px-to-rem(16 32);
