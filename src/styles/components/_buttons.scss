@@ -63,15 +63,11 @@ $box-shadow-button:
 
     &--lg {
         padding: px-to-rem(24 32);
-        width: px-to-rem(398);
+        width: 100%;
 
         @include respond-to(tablet) {
             padding: px-to-rem(16 32);
             width: auto;
-        }
-
-        @include respond-to(mobile, max-width) {
-            width: 100%;
         }
     }
 
