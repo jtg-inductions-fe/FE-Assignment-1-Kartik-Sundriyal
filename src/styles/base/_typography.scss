@@ -58,11 +58,13 @@ h3 {
     color: $color-text-light;
     font-family: $font-secondary;
     line-height: $line-height-description;
-    letter-spacing: 0;
     text-align: center;
-    max-width: px-to-rem(640);
 
     @include respond-to(tablet) {
         font-size: $font-size-description-md;
+    }
+
+    @include respond-to(desktop) {
+        text-align: left;
     }
 }

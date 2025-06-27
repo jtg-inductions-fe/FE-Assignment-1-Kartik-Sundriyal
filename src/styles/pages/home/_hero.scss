@@ -75,7 +75,7 @@ $box-shadow-tag:
         }
     }
 
-    &__heading {
+    &__head {
         display: flex;
         flex-direction: column;
         gap: px-to-rem(16);
@@ -92,6 +92,10 @@ $box-shadow-tag:
         }
     }
 
+    &__heading {
+        @include line-clamp(4);
+    }
+
     &__highlight {
         color: $color-secondary;
     }
@@ -105,18 +109,21 @@ $box-shadow-tag:
         background-color: $color-white;
         font-family: $font-primary;
         font-size: $font-size-sm;
-
         box-shadow: $box-shadow-tag;
     }
 
     &__desc {
+        @include line-clamp(4);
+
         @include respond-to(tablet) {
             padding: px-to-rem(0 70);
         }
+
         @include respond-to(desktop) {
             padding: 0;
             padding-right: px-to-rem(120);
             text-align: left;
+            @include line-clamp(6);
         }
     }
 
@@ -130,17 +137,9 @@ $box-shadow-tag:
             flex-direction: row;
             gap: px-to-rem(16);
         }
-
-        & .button {
-            display: flex;
-            align-items: center;
-            gap: px-to-rem(8);
-        }
     }
 
     &__text-span {
-        display: inline-block;
-        height: px-to-rem(24);
         padding: px-to-rem(4 0);
     }
 
