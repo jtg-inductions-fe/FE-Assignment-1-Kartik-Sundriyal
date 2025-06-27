@@ -1,8 +1,23 @@
-@use '../abstracts/variables' as *;
+@use '../abstracts' as *;
 
 // Global body text styling
-body {
+.body {
     font-family: $font-primary;
     font-size: $font-size-base;
     background-color: $color-white;
+
+    &--no-scroll {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__main {
+        &--blur {
+            filter: blur(px-to-rem(2));
+
+            @include respond-to(desktop) {
+                filter: none;
+            }
+        }
+    }
 }

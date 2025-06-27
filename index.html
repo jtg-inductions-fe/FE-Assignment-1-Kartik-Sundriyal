@@ -1,12 +1,83 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
         <meta charset="UTF-8" />
+        <meta
+            name="description"
+            content="Travelog helps you travel the top destinations of the world with ease and comfort."
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Standard favicon -->
+        <link rel="icon" href="/assets/favicons/favicon.ico" />
+
+        <title>Travlog | Explore the Globe | Best Destinations</title>
     </head>
-    <body>
-        <div>Hello World</div>
+    <body class="body">
+        <div class="container">
+            <!-- Header -->
+            <header class="header">
+                <nav class="header__nav">
+                    <a
+                        href="/"
+                        aria-label="Travlog App logo"
+                        class="header__icons header__logo-wrapper"
+                    >
+                        <span class="icon-app-logo header__logo"></span>
+                    </a>
+                    <div
+                        class="header__menubar"
+                        role="region"
+                        aria-label="Navigation menu"
+                        tabindex="-1"
+                    >
+                        <ul class="header__links" tabindex="-1">
+                            <li class="header__link header__link--active">
+                                <a href="/" aria-label="Home">Home</a>
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Discover">Discover</a>
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Special Deals"
+                                    >Special Deals</a
+                                >
+                            </li>
+                            <li class="header__link">
+                                <a href="/" aria-label="Contact">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="header__btn-group">
+                            <a
+                                href="/"
+                                class="button button--secondary"
+                                aria-label="Log in"
+                                >Log In</a
+                            >
+                            <a
+                                href="/"
+                                class="button button--primary"
+                                aria-label="Sign up"
+                                >Sign Up</a
+                            >
+                        </div>
+                    </div>
+                    <button
+                        class="header__icons header__icon-wrapper"
+                        aria-expanded="false"
+                        aria-controls="header__menubar"
+                        aria-label="Toggle navigation menu"
+                    >
+                        <span
+                            class="icon-hamburger header__hamburger-icon"
+                            aria-label="Menu icon used to open a list of menu items"
+                        ></span>
+                    </button>
+                </nav>
+            </header>
+            <!-- Main -->
+            <main class="body__main"></main>
+        </div>
         <script type="module" src="./src/script/index.js"></script>
     </body>
 </html>

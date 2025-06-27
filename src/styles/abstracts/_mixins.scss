@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'functions' as *;
 
 $breakpoints: (
     'mobile': $breakpoint-mobile,
@@ -7,16 +8,16 @@ $breakpoints: (
 );
 
 /// A mixin for handling responsive breakpoints using a `$breakpoints` map.
-/// Injects styles inside a `@media (min-width: ...)` query based on the named breakpoint.
+/// Injects styles inside a `@media (width-type: ...)` query based on the named breakpoint.
 ///
 /// @param {String} $breakpoint - The key name of the breakpoint to target (must exist in `$breakpoints` map).
-///
+/// @param {String} $width-type - The width type for the media query (default: min-width).
 /// @content - The CSS rules to include within the media query.
-///
-@mixin respond-to($breakpoint) {
+
+@mixin respond-to($breakpoint, $width-type: min-width) {
     $size: map-get($breakpoints, $breakpoint);
     @if $size {
-        @media (min-width: $size) {
+        @media ($width-type: $size) {
             @content;
         }
     } @else {

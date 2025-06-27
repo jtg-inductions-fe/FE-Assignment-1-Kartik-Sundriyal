@@ -1,0 +1,243 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+/// Adds the invisible state styles to the sidebar before making it visible on the screen.
+@mixin hidden-menu() {
+    position: absolute;
+    top: 100%;
+    z-index: $z-index-menu;
+    font-size: $font-size-base;
+    border-radius: px-to-rem(8);
+    background-color: $color-blue-charcoal;
+    color: $color-white;
+    width: 0;
+    height: 0;
+    padding: px-to-rem(16);
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin is-loaded() {
+    &--is-loaded {
+        @include transition(all, 0.3s, ease-in-out);
+    }
+}
+
+.header {
+    padding: px-to-rem(35 16);
+    position: sticky;
+    top: 0;
+    z-index: $z-index-sticky;
+    backdrop-filter: blur(px-to-rem(4));
+
+    @include respond-to(tablet) {
+        padding: px-to-rem(32 64);
+    }
+
+    @include respond-to(desktop) {
+        margin-top: px-to-rem(34);
+        padding: px-to-rem(32 123);
+    }
+
+    &__nav {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond-to(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include respond-to(desktop) {
+            grid-template-columns: max-content 1fr;
+        }
+    }
+
+    &__icons {
+        padding: px-to-rem(4);
+    }
+
+    &__logo-wrapper {
+        padding: px-to-rem(4 0);
+        @include respond-to(tablet) {
+            order: 1;
+            justify-self: center;
+        }
+
+        @include respond-to(desktop) {
+            order: 0;
+        }
+    }
+
+    &__logo {
+        background-image: linear-gradient(
+            to right,
+            $color-secondary,
+            $color-primary
+        );
+        color: transparent;
+        background-clip: text;
+    }
+
+    &__icon-wrapper {
+        @include respond-to(tablet) {
+            justify-self: start;
+        }
+        @include respond-to(desktop) {
+            display: none;
+        }
+    }
+
+    &__hamburger-icon {
+        &:hover {
+            &::before {
+                color: darken($color-primary, 20%);
+            }
+        }
+    }
+
+    &__logo,
+    &__hamburger-icon {
+        font-size: px-to-rem(40);
+        width: px-to-rem(40);
+    }
+
+    &__menubar {
+        @include hidden-menu;
+        right: 0;
+
+        &--visible {
+            width: px-to-rem(288);
+            height: px-to-rem(320);
+            opacity: 1;
+            pointer-events: auto;
+            overflow-y: auto;
+        }
+
+        @include is-loaded;
+
+        @include respond-to(tablet) {
+            all: unset;
+            display: block;
+            position: static;
+            order: 1;
+            flex: 1;
+        }
+
+        @include respond-to(desktop) {
+            all: unset;
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: px-to-rem(16);
+        @include respond-to(tablet) {
+            @include hidden-menu;
+            gap: px-to-rem(40);
+            left: 0;
+
+            @include is-loaded;
+
+            &--visible {
+                height: px-to-rem(352);
+                width: px-to-rem(352);
+                opacity: 1;
+                pointer-events: auto;
+                overflow-y: auto;
+            }
+        }
+
+        @include respond-to(desktop) {
+            all: unset;
+            font-size: px-to-rem(14);
+            position: static;
+            margin: 0 auto;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: px-to-rem(64);
+            background-color: transparent;
+            padding: 0;
+        }
+    }
+
+    &__link {
+        font-size: inherit;
+        border-bottom: solid px-to-rem(2) $color-text-x-light;
+        display: block;
+        cursor: pointer;
+        text-align: center;
+        border-radius: px-to-rem(8);
+
+        & a {
+            padding: px-to-rem(8);
+            display: block;
+        }
+
+        @include respond-to(desktop) {
+            color: $color-text-light;
+            border: none;
+            background-color: transparent;
+            display: inline;
+            padding: 0;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+
+        &--active {
+            color: $color-dark;
+            background-color: $color-white;
+
+            @include respond-to(desktop) {
+                background-color: transparent;
+            }
+        }
+
+        &:hover {
+            color: $color-dark;
+            background-color: rgba(255, 255, 255, 0.5);
+
+            @include respond-to(desktop) {
+                color: $color-primary;
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__btn-group {
+        display: flex;
+        justify-content: center;
+        row-gap: px-to-rem(10);
+        column-gap: px-to-rem(8);
+
+        @include respond-to(mobile, max-width) {
+            flex-wrap: wrap;
+        }
+
+        @include respond-to(tablet) {
+            align-items: center;
+            column-gap: 0;
+            gap: px-to-rem(6);
+            justify-content: flex-end;
+            order: 2;
+        }
+    }
+}

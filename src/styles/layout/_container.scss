@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.container {
+    max-width: $breakpoint-mobile;
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+        max-width: $breakpoint-tablet;
+    }
+
+    @include respond-to(desktop) {
+        max-width: $breakpoint-desktop;
+    }
+}

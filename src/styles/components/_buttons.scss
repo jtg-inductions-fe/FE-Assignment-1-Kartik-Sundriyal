@@ -4,7 +4,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: px-to-rem(16 32);
+    padding: px-to-rem(10 16);
     font-family: $font-primary;
     font-weight: 700;
     font-size: $font-size-sm;
@@ -12,10 +12,21 @@
     border: none;
     border-radius: px-to-rem(100);
     cursor: pointer;
-    @include transition(background-color, 0.2, ease);
+    @include transition(background-color, 0.2s, ease);
+
+    @include respond-to(tablet) {
+        padding: px-to-rem(16 32);
+        width: auto;
+    }
+
+    @include respond-to(desktop) {
+        padding: px-to-rem(16 32);
+        width: auto;
+    }
 
     &--primary {
         background-color: $color-primary;
+        color: $color-light;
 
         &:hover {
             background-color: darken($color-primary, 10%);
@@ -24,6 +35,7 @@
 
     &--secondary {
         background-color: $color-white;
+        color: $color-dark;
 
         &:hover {
             background-color: darken($color-white, 10%);
@@ -33,16 +45,13 @@
     &--light {
         background-color: $color-light;
     }
+
     &--dark {
         background-color: $color-dark;
     }
 
     &--outline {
         border: solid px-to-rem(1) $color-light;
-    }
-
-    &--xs {
-        padding: px-to-rem(16 32);
     }
 
     &--sm {
