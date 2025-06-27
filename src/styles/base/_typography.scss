@@ -1,4 +1,6 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
 
 $font-size-heading-1-sm: px-to-rem(40);
 $font-size-heading-1-md: px-to-rem(56);
@@ -27,7 +29,15 @@ h3 {
 }
 
 .heading-xl {
-    font-size: $font-size-heading-1-lg;
+    font-size: $font-size-heading-1-sm;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-heading-1-md;
+    }
+
+    @include respond-to(desktop) {
+        font-size: $font-size-heading-1-lg;
+    }
 }
 
 .heading-lg {
@@ -40,4 +50,21 @@ h3 {
 
 .heading-sm {
     font-size: $font-size-heading-3-sm;
+}
+
+.description {
+    font-size: $font-size-description-sm;
+    font-weight: 400;
+    color: $color-text-light;
+    font-family: $font-secondary;
+    line-height: $line-height-description;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-description-md;
+    }
+
+    @include respond-to(desktop) {
+        text-align: left;
+    }
 }

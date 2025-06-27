@@ -71,3 +71,14 @@ $breakpoints: (
         src: #{unquote($src)};
     }
 }
+
+/// Sets a line clamp for textual elements
+/// @param {Number} $num-of-lines - The number of lines needed
+/// @param {String} $orientation
+@mixin line-clamp($num-of-lines: 2, $orientation: vertical) {
+    display: -webkit-box;
+    -webkit-box-orient: $orientation;
+    -webkit-line-clamp: $num-of-lines;
+    line-clamp: $num-of-lines;
+    overflow: hidden;
+}
