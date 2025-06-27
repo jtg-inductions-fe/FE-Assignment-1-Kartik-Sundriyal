@@ -4,6 +4,7 @@
 
 .partners {
     position: relative;
+
     &__list {
         display: flex;
         column-gap: px-to-rem(27);
@@ -26,17 +27,17 @@
     }
 
     &__partner {
-        height: px-to-rem(20);
+        min-height: px-to-rem(20);
 
         @include respond-to(tablet) {
-            height: px-to-rem(32);
+            min-height: px-to-rem(32);
         }
     }
 
     &__arrows {
         position: absolute;
         visibility: hidden;
-        z-index: 1;
+        z-index: $z-index-arrows;
 
         @include respond-to(tablet) {
             visibility: visible;
