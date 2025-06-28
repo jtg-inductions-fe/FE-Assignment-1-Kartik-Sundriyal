@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     gap: px-to-rem(37.5);
-    margin: px-to-rem(68 16 93);
+    margin: px-to-rem(0 16 93);
     position: relative;
 
     @include respond-to(tablet) {
@@ -18,7 +18,18 @@
         margin: px-to-rem(0 123);
         padding: px-to-rem(64 0);
         flex-direction: row;
-        gap: unset;
+        gap: 0;
+    }
+
+    &__image {
+        @include respond-to(tablet) {
+            margin-bottom: px-to-rem(30);
+        }
+
+        @include respond-to(desktop) {
+            margin-bottom: 0;
+            margin-right: px-to-rem(20);
+        }
     }
 
     &__body {
@@ -32,6 +43,7 @@
 
         @include respond-to(desktop) {
             width: 45%;
+            margin-left: px-to-rem(0);
         }
     }
 
@@ -39,63 +51,42 @@
         display: flex;
         flex-direction: column;
         gap: px-to-rem(32);
-
-        .description {
-            padding: px-to-rem(0 16);
-
-            @include respond-to(desktop) {
-                padding: 0;
-                text-align: left;
-            }
-        }
     }
 
     &__heading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: px-to-rem(16);
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        padding: px-to-rem(0 16);
+        @include line-clamp(6);
 
         @include respond-to(desktop) {
-            align-items: flex-start;
+            padding: 0;
         }
     }
 
-    &__cards,
-    &__card {
+    &__cards {
         display: flex;
         flex-direction: column;
         gap: px-to-rem(16);
-    }
 
-    &__cards {
         @include respond-to(tablet) {
             flex-direction: row;
             gap: px-to-rem(32);
             flex-wrap: wrap;
+            max-height: px-to-rem(450);
+            overflow: auto;
         }
     }
 
     &__card {
-        @include respond-to(tablet) {
-            flex: auto;
-            width: 40%;
-        }
-    }
-
-    &__milestone {
-        font-weight: 700;
-        font-size: px-to-rem(35);
-        line-height: $line-height-base;
-        color: $color-orange;
+        min-width: 40%;
     }
 
     &__card-description {
         color: $color-black;
-
-        @include respond-to(mobile) {
-            font-size: px-to-rem(18);
-        }
+        @include line-clamp(3);
     }
 
     &__coupon-icon {
@@ -105,7 +96,7 @@
             display: block;
             position: absolute;
             top: px-to-rem(302);
-            right: px-to-rem(-56);
+            right: px-to-rem(-69);
         }
     }
 }

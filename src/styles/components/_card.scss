@@ -18,6 +18,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
 
     &__heading {
         text-align: center;
+
         &--standard {
             font-size: $font-size-card-heading-md;
             @include line-clamp(3);
@@ -38,6 +39,11 @@ $font-size-card-heading-x-lg: px-to-rem(35);
         &--lg {
             font-size: $font-size-card-heading-x-lg;
         }
+
+        &--highlight {
+            @include line-clamp();
+            color: $color-orange;
+        }
     }
 
     &__body {
@@ -46,7 +52,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
         gap: px-to-rem(32);
 
         &--gap-md {
-            gap: px-to-rem(16);
+            gap: px-to-rem(14);
         }
 
         &--gap-sm {
