@@ -1,5 +1,10 @@
 @use '../abstracts' as *;
 
+$font-size-card-heading-sm: px-to-rem(23);
+$font-size-card-heading-md: px-to-rem(24);
+$font-size-card-heading-lg: px-to-rem(28);
+$font-size-card-heading-x-lg: px-to-rem(35);
+
 .card {
     flex: 1;
     display: flex;
@@ -11,15 +16,55 @@
     border-radius: px-to-rem(32);
     background-color: $color-white;
 
+    &__heading {
+        text-align: center;
+        &--standard {
+            font-size: $font-size-card-heading-md;
+            @include line-clamp(3);
+
+            @include respond-to(tablet) {
+                font-size: $font-size-card-heading-lg;
+            }
+        }
+
+        &--sm {
+            font-size: $font-size-card-heading-sm;
+        }
+
+        &--md {
+            font-size: $font-size-card-heading-lg;
+        }
+
+        &--lg {
+            font-size: $font-size-card-heading-x-lg;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        &--gap-md {
+            gap: px-to-rem(16);
+        }
+
+        &--gap-sm {
+            gap: px-to-rem(8);
+        }
+    }
+
     &--lg {
         @include respond-to(tablet) {
             padding: px-to-rem(64);
             padding-bottom: px-to-rem(35);
             gap: px-to-rem(64);
+            min-width: 32%;
         }
 
         @include respond-to(desktop) {
             padding-bottom: px-to-rem(98);
+            min-width: 45%;
         }
     }
 
@@ -29,7 +74,7 @@
 
     &:hover {
         box-shadow:
-            0px 0px 0px 0px rgba(0, 0, 0, 0.1),
-            0px 41px 89px 0px rgba(0, 0, 0, 0.1);
+            px-to-rem(0 0 0 0) rgba(0, 0, 0, 0.1),
+            px-to-rem(0 41 89 0) rgba(0, 0, 0, 0.1);
     }
 }

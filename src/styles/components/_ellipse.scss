@@ -9,6 +9,7 @@
     width: px-to-rem(272);
     height: px-to-rem(348);
     z-index: $z-index-ellipse;
+    border-radius: 100%;
 
     &--orange {
         left: px-to-rem(-33);
@@ -28,6 +29,27 @@
             height: px-to-rem(494);
             top: px-to-rem(42.91);
             left: px-to-rem(-70.99);
+        }
+    }
+
+    &--yellow {
+        background: $color-yellow;
+        display: none;
+
+        @include respond-to(tablet) {
+            top: px-to-rem(-229);
+            right: 0;
+            display: inline-block;
+            width: px-to-rem(80);
+            height: px-to-rem(406);
+            filter: blur(px-to-rem(80));
+        }
+
+        @include respond-to(desktop) {
+            filter: blur(px-to-rem(100));
+            width: px-to-rem(100);
+            right: px-to-rem(-38.37);
+            top: px-to-rem(-200);
         }
     }
 }

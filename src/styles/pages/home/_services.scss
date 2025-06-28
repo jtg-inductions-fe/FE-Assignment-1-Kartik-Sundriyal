@@ -1,6 +1,7 @@
 @use '../../abstracts' as *;
 
 .services {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: px-to-rem(32);
@@ -17,62 +18,38 @@
         align-items: center;
         gap: 0;
         margin: px-to-rem(0 123);
-        // gap: px-to-rem(64);
 
         &__card:last-child {
             display: none;
         }
     }
 
-    &__heading {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: px-to-rem(16);
+    &__head {
+        flex: 1;
+    }
 
-        @include respond-to(desktop) {
-            align-items: flex-start;
-            text-align: left;
-        }
+    &__heading {
+        @include line-clamp(3);
     }
 
     &__cards {
+        flex: 2;
         display: flex;
         flex-direction: column;
         gap: px-to-rem(16);
+        overflow: auto;
 
         @include respond-to(tablet) {
             flex-direction: row;
         }
 
         @include respond-to(desktop) {
+            max-width: 90%;
             gap: px-to-rem(21);
         }
     }
 
-    &__card-image {
-        display: inline-block;
-    }
-
-    &__card-body {
-        display: flex;
-        flex-direction: column;
-        gap: px-to-rem(32);
-    }
-
-    &__card-heading {
-        font-size: px-to-rem(24);
-        text-align: center;
-
-        @include respond-to(tablet) {
-            font-size: px-to-rem(28);
-        }
-    }
-
     &__card-description {
-        @include respond-to(mobile) {
-            font-size: px-to-rem(18);
-        }
+        @include line-clamp(6);
     }
 }
