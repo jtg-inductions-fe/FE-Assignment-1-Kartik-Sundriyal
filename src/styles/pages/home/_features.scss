@@ -13,7 +13,7 @@
     }
 
     @include respond-to(desktop) {
-        margin: px-to-rem(0 123);
+        margin: px-to-rem(5 123);
         padding: px-to-rem(64 0);
         flex-direction: row;
         align-items: center;
@@ -30,6 +30,14 @@
         }
     }
 
+    &__heading {
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        @include line-clamp(6);
+    }
+
     &__body {
         display: flex;
         flex-direction: column;
@@ -43,6 +51,7 @@
 
         @include respond-to(desktop) {
             width: 50%;
+            align-items: center;
         }
     }
 
@@ -52,21 +61,7 @@
         gap: px-to-rem(32);
 
         @include respond-to(desktop) {
-            .description {
-                text-align: left;
-                padding-right: px-to-rem(16);
-            }
-        }
-    }
-
-    &__heading {
-        display: flex;
-        flex-direction: column;
-        gap: px-to-rem(16);
-        align-items: center;
-
-        @include respond-to(desktop) {
-            align-items: flex-start;
+            margin-left: px-to-rem(20);
         }
     }
 
@@ -78,35 +73,18 @@
         @include respond-to(tablet) {
             gap: 0;
         }
+
+        @include respond-to(desktop) {
+            overflow: auto;
+            max-height: 31rem;
+        }
     }
 
-    &__card {
-        align-items: flex-start;
-
-        @include respond-to(tablet) {
-            flex-direction: row;
-            align-items: center;
-        }
+    &__card-desc {
+        @include line-clamp(4);
     }
 
     &__icons {
         font-size: px-to-rem(100);
-    }
-
-    &__card-body {
-        display: flex;
-        flex-direction: column;
-        gap: px-to-rem(8);
-    }
-
-    &__card-heading {
-        font-size: px-to-rem(23);
-    }
-
-    &__card-description {
-        text-align: left;
-        @include respond-to(mobile) {
-            font-size: px-to-rem(18);
-        }
     }
 }
