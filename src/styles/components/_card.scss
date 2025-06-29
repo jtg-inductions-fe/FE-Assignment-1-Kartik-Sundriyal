@@ -12,7 +12,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
     align-items: center;
     gap: px-to-rem(32);
     padding: px-to-rem(32);
-    border: solid 1px $color-black-light;
+    border: solid px-to-rem(1) $color-black-light;
     border-radius: px-to-rem(32);
     background-color: $color-white;
 
@@ -30,6 +30,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
 
         &--sm {
             font-size: $font-size-card-heading-sm;
+            @include line-clamp();
         }
 
         &--md {
@@ -43,6 +44,10 @@ $font-size-card-heading-x-lg: px-to-rem(35);
         &--highlight {
             @include line-clamp();
             color: $color-orange;
+        }
+
+        &--left {
+            text-align: left;
         }
     }
 
@@ -74,8 +79,22 @@ $font-size-card-heading-x-lg: px-to-rem(35);
         }
     }
 
+    &--hor {
+        align-items: flex-start;
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
     &--unbordered {
         border: none;
+
+        &:hover {
+            border: solid px-to-rem(1) $color-black-light;
+            box-shadow: none;
+        }
     }
 
     &:hover {
