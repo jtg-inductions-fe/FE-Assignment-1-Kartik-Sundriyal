@@ -85,6 +85,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
         @include respond-to(tablet) {
             flex-direction: row;
             align-items: center;
+            padding-bottom: px-to-rem(24);
         }
     }
 
