@@ -122,7 +122,6 @@ $box-shadow-tag:
         @include respond-to(desktop) {
             padding: 0;
             padding-right: px-to-rem(120);
-            text-align: left;
             @include line-clamp(6);
         }
     }

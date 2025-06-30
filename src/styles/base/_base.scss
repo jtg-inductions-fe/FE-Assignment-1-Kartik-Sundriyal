@@ -12,6 +12,7 @@
     }
 
     &__main {
+        width: 100%;
         &--blur {
             filter: blur(px-to-rem(2));
 

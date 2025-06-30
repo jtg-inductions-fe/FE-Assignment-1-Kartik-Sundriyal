@@ -11,10 +11,6 @@ $font-size-heading-2-md: px-to-rem(40);
 $font-size-heading-2-lg: px-to-rem(44);
 $font-size-heading-2-xl: px-to-rem(55);
 
-$font-size-heading-3-sm: px-to-rem(23);
-$font-size-heading-3-md: px-to-rem(24);
-$font-size-heading-3-lg: px-to-rem(28);
-
 $font-size-description-sm: px-to-rem(16);
 $font-size-description-md: px-to-rem(18);
 $font-size-description-lg: px-to-rem(23);
@@ -26,6 +22,7 @@ h3 {
     font-family: $font-primary;
     font-weight: 700;
     line-height: $line-height-base;
+    color: $color-black;
 }
 
 .heading-xl {
@@ -41,15 +38,43 @@ h3 {
 }
 
 .heading-lg {
-    font-size: $font-size-heading-2-xl;
+    font-size: $font-size-heading-2-sm;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-heading-2-md;
+    }
+
+    @include respond-to(desktop) {
+        font-size: $font-size-heading-2-lg;
+        text-align: left;
+    }
 }
 
-.heading-md {
-    font-size: $font-size-heading-2-lg;
-}
+.heading-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: px-to-rem(16);
 
-.heading-sm {
-    font-size: $font-size-heading-3-sm;
+    @include respond-to(desktop) {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &__title {
+        @include line-clamp();
+        color: $color-secondary;
+        font-size: $font-size-base;
+        font-weight: 700;
+        line-height: $line-height-base;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        @include respond-to(tablet) {
+            font-size: $font-size-md;
+        }
+    }
 }
 
 .description {
@@ -66,5 +91,30 @@ h3 {
 
     @include respond-to(desktop) {
         text-align: left;
+    }
+
+    &--standard {
+        @include respond-to(mobile) {
+            font-size: $font-size-description-md;
+        }
+
+        @include respond-to(desktop) {
+            text-align: center;
+        }
+    }
+
+    &--emphasized {
+        @include respond-to(mobile) {
+            font-weight: 450;
+            font-size: $font-size-description-md;
+        }
+
+        @include respond-to(tablet) {
+            font-size: $font-size-description-lg;
+        }
+
+        @include respond-to(desktop) {
+            text-align: center;
+        }
     }
 }
