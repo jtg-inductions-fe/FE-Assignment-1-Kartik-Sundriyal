@@ -49,6 +49,13 @@ h3 {
         font-size: $font-size-heading-2-lg;
         text-align: left;
     }
+
+    &--enlarge {
+        @include respond-to(desktop) {
+            font-size: $font-size-heading-2-xl;
+            text-align: center;
+        }
+    }
 }
 
 .heading-primary {
@@ -81,6 +88,10 @@ h3 {
             align-items: center;
             text-align: center;
         }
+    }
+
+    &--gap-md {
+        gap: px-to-rem(32);
     }
 }
 
