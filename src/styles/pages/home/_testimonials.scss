@@ -26,30 +26,15 @@
         background-position: center 40%;
     }
 
-    &__slides {
-        display: flex;
-        overflow: scroll;
-        max-width: 100%;
-        scroll-snap-type: x mandatory;
-
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-
-        &::-webkit-scrollbar {
-            display: none;
-        }
-    }
-
-    &__slide {
-        min-width: 100%;
-        scroll-snap-align: center;
-        animation: scrollSlides 14s infinite;
-    }
-
     &__body {
+        display: flex;
+        flex-direction: column;
         max-width: 100%;
+        overflow: hidden;
+        gap: px-to-rem(64);
         @include respond-to(tablet) {
             max-width: 65%;
+            gap: px-to-rem(56);
         }
 
         @include respond-to(desktop) {
@@ -57,7 +42,6 @@
         }
     }
 
-    &__body,
     &__slide {
         display: flex;
         flex-direction: column;
@@ -123,6 +107,7 @@
     &__pagenation {
         display: flex;
         gap: px-to-rem(24);
+        justify-content: center;
     }
 
     &__page {
@@ -131,27 +116,15 @@
         background-color: $color-text-x-light;
         border-radius: 50%;
         cursor: pointer;
-
-        &--active {
-            background-color: $color-secondary;
-        }
     }
 }
 
-@keyframes scrollSlides {
-    0%,
-    20% {
-        transform: translateX(0%);
-    }
-    30%,
-    50% {
-        transform: translateX(-100%);
-    }
-    60%,
-    80% {
-        transform: translateX(-200%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+.glide__bullet--active {
+    background-color: $color-secondary;
+}
+
+.glide__arrow[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
 }
