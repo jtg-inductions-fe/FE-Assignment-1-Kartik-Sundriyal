@@ -38,13 +38,12 @@
         background: linear-gradient(to right, $color-secondary, $color-primary);
         color: transparent;
         background-clip: text;
+        -webkit-background-clip: text;
     }
 
     &__desc {
         @include line-clamp(6);
         text-align: left;
-
-        @include line-clamp(6);
 
         @include respond-to(tablet) {
             padding: 0;
@@ -115,7 +114,7 @@
 
         &--open {
             max-height: px-to-rem(250);
-            overflow: auto;
+            overflow: visible;
         }
     }
 
@@ -141,7 +140,7 @@
         }
 
         &:focus-visible {
-            border: px-to-rem(1) solid;
+            border: $color-primary solid px-to-rem(2);
         }
     }
 

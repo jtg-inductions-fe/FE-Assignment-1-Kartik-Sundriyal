@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const list = document.querySelector(targetSelector);
         const arrow = document.querySelector(arrowSelector);
 
+        if (!list || !arrow) {
+            return;
+        }
+
         button.addEventListener('click', () => {
             list.classList.toggle('footer__list--open');
             arrow.classList.toggle('footer__list-control-arrow--open');
