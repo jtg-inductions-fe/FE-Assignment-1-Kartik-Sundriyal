@@ -55,6 +55,14 @@ $box-shadow-button:
         border: solid px-to-rem(1) $color-light;
     }
 
+    &--outline-dark {
+        border: solid px-to-rem(1) $color-black-light;
+    }
+
+    &--round {
+        border-radius: 50%;
+    }
+
     &--sm {
         padding: px-to-rem(32 64);
         border-radius: px-to-rem(32);
