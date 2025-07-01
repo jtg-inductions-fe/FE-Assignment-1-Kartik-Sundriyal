@@ -1,0 +1,86 @@
+@use '../../abstracts' as *;
+
+.features {
+    margin: px-to-rem(0 40);
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(107);
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(0 64);
+        padding: px-to-rem(64 32);
+        gap: px-to-rem(70);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(5 123);
+        padding: px-to-rem(64 0);
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__image {
+        @include respond-to(tablet) {
+            padding: px-to-rem(0 69);
+        }
+        @include respond-to(desktop) {
+            order: 1;
+            padding: 0;
+            width: 50%;
+        }
+    }
+
+    &__heading {
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        @include line-clamp(6);
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+        padding: px-to-rem(0 8);
+
+        @include respond-to(tablet) {
+            gap: px-to-rem(64);
+            padding: 0;
+        }
+
+        @include respond-to(desktop) {
+            width: 50%;
+            align-items: center;
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        @include respond-to(desktop) {
+            margin-left: px-to-rem(20);
+        }
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(8);
+
+        @include respond-to(tablet) {
+            gap: px-to-rem(8);
+        }
+    }
+
+    &__card-desc {
+        @include line-clamp(4);
+        text-align: left;
+    }
+
+    &__icons {
+        font-size: px-to-rem(100);
+    }
+}

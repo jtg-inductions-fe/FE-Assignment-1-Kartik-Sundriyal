@@ -1,6 +1,10 @@
 @use '../abstracts' as *;
 
 // Global body text styling
+html {
+    scroll-behavior: smooth;
+}
+
 .body {
     font-family: $font-primary;
     font-size: $font-size-base;
