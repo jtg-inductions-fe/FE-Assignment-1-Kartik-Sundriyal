@@ -1,0 +1,101 @@
+@use '../../abstracts' as *;
+
+.travelpoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: px-to-rem(37.5);
+    margin: px-to-rem(0 16 93);
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(0 64);
+        padding: px-to-rem(64 32);
+        gap: px-to-rem(64);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(0 123);
+        padding: px-to-rem(64 0);
+        flex-direction: row;
+        gap: 0;
+    }
+
+    &__image {
+        @include respond-to(tablet) {
+            margin-bottom: px-to-rem(30);
+        }
+
+        @include respond-to(desktop) {
+            margin-bottom: 0;
+            margin-right: px-to-rem(20);
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        @include respond-to(tablet) {
+            gap: px-to-rem(64);
+        }
+
+        @include respond-to(desktop) {
+            width: 45%;
+            margin-left: px-to-rem(0);
+        }
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+    }
+
+    &__heading {
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        padding: px-to-rem(0 16);
+        @include line-clamp(6);
+
+        @include respond-to(desktop) {
+            padding: 0;
+        }
+    }
+
+    &__cards {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(16);
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            gap: px-to-rem(32);
+            flex-wrap: wrap;
+            max-height: px-to-rem(450);
+        }
+    }
+
+    &__card {
+        min-width: 40%;
+    }
+
+    &__card-description {
+        color: $color-black;
+        @include line-clamp(3);
+    }
+
+    &__coupon-icon {
+        display: none;
+
+        @include respond-to(desktop) {
+            display: block;
+            position: absolute;
+            top: px-to-rem(-93);
+            right: px-to-rem(-61);
+        }
+    }
+}
