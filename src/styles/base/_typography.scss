@@ -79,6 +79,7 @@ h3 {
     &--centered {
         @include respond-to(desktop) {
             align-items: center;
+            text-align: center;
         }
     }
 }
