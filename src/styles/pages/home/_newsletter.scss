@@ -58,7 +58,7 @@
         }
     }
 
-    &__email-inp {
+    &__email-input {
         display: inline-block;
         background-color: $color-white;
         padding: px-to-rem(24 32 24 70);
@@ -73,7 +73,7 @@
         }
     }
 
-    &__inp-placeholder {
+    &__input-placeholder {
         position: absolute;
         top: px-to-rem(22);
         left: px-to-rem(32);
@@ -83,7 +83,7 @@
         }
     }
 
-    &__inp-icon {
+    &__input-icon {
         font-size: px-to-rem(24);
 
         @include respond-to(tablet) {
