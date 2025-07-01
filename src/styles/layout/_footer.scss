@@ -62,6 +62,13 @@
 
     &__icon {
         font-size: px-to-rem(32);
+
+        &:hover {
+            &::before,
+            & :first-child::before {
+                color: darken($color-primary, 20%);
+            }
+        }
     }
 
     &__lists {
@@ -120,19 +127,21 @@
         display: inline-block;
         width: 100%;
         padding: px-to-rem(8 12);
-        background-color: $color-black-light;
         border-radius: px-to-rem(10);
         @include line-clamp(2);
 
         @include respond-to(tablet) {
-            width: auto;
-            background-color: transparent;
+            width: fit-content;
             padding: 0;
             border-radius: 0;
         }
 
         &:hover {
             color: $color-primary;
+        }
+
+        &:focus-visible {
+            border: px-to-rem(1) solid;
         }
     }
 
@@ -149,9 +158,14 @@
     &__list-control-arrow {
         font-size: px-to-rem(24);
         color: $color-blue-charcoal;
+        @include transition(transform);
 
         @include respond-to(tablet) {
             display: none;
+        }
+
+        &--open {
+            transform: rotate(90deg);
         }
     }
 }
