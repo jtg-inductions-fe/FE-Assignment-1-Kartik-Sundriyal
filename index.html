@@ -47,15 +47,21 @@
                                 <a href="/" aria-label="Home">Home</a>
                             </li>
                             <li class="header__link">
-                                <a href="/" aria-label="Discover">Discover</a>
+                                <a href="#services" aria-label="Discover"
+                                    >Discover</a
+                                >
                             </li>
                             <li class="header__link">
-                                <a href="/" aria-label="Special Deals"
+                                <a
+                                    href="#travelpoint"
+                                    aria-label="Special Deals"
                                     >Special Deals</a
                                 >
                             </li>
                             <li class="header__link">
-                                <a href="/" aria-label="Contact">Contact</a>
+                                <a href="#newsletter" aria-label="Contact"
+                                    >Contact</a
+                                >
                             </li>
                         </ul>
                         <div class="header__btn-group">
@@ -103,6 +109,7 @@
                             <img
                                 src="/assets/images/hero/hero-mobile.png"
                                 alt="Hero image as a collage of top travel destinations."
+                                fetchpriority="high"
                             />
                         </picture>
                     </div>
@@ -164,6 +171,7 @@
                                 src="/assets/images/partners/trip-advisor.svg"
                                 alt="Trip Advisor"
                                 class="partners__partner"
+                                loading="lazy"
                             />
                         </li>
                         <li>
@@ -171,6 +179,7 @@
                                 src="/assets/images/partners/expedia.svg"
                                 alt="Expedia"
                                 class="partners__partner"
+                                loading="lazy"
                             />
                         </li>
                         <li>
@@ -178,6 +187,7 @@
                                 src="/assets/images/partners/booking-com.svg"
                                 alt="Booking.com"
                                 class="partners__partner"
+                                loading="lazy"
                             />
                         </li>
                         <li>
@@ -185,6 +195,7 @@
                                 src="/assets/images/partners/airbnb.svg"
                                 alt="airbnb"
                                 class="partners__partner"
+                                loading="lazy"
                             />
                         </li>
                         <li>
@@ -192,12 +203,13 @@
                                 src="/assets/images/partners/orbitz.svg"
                                 alt="orbitz"
                                 class="partners__partner"
+                                loading="lazy"
                             />
                         </li>
                     </ul>
                 </section>
                 <!-- Services -->
-                <section class="services">
+                <section class="services" id="services">
                     <span
                         class="ellipse ellipse--yellow"
                         role="presentation"
@@ -215,6 +227,7 @@
                                 <img
                                     src="/assets/images/services/destination.png"
                                     alt="Globe with location tags representing tour guide services"
+                                    loading="lazy"
                                 />
                             </div>
                             <div class="card__body">
@@ -236,6 +249,7 @@
                                 <img
                                     src="/assets/images/services/booking.png"
                                     alt="An image of booking calender about our easy booking services"
+                                    loading="lazy"
                                 />
                             </div>
                             <div class="card__body">
@@ -257,6 +271,7 @@
                                 <img
                                     src="/assets/images/services/weather.png"
                                     alt="An image of cloud and sun about our weather forecast services"
+                                    loading="lazy"
                                 />
                             </div>
                             <div class="card__body">
@@ -276,7 +291,7 @@
                     </div>
                 </section>
                 <!-- Travelpoint -->
-                <section class="travelpoint">
+                <section class="travelpoint" id="travelpoint">
                     <div class="travelpoint__image">
                         <picture>
                             <source
@@ -294,6 +309,7 @@
                             <img
                                 src="/assets/images/travelpoint/travelpoint-mobile.png"
                                 alt="A happy woman with her bagpacks, a yellow background and a discounted price tag"
+                                loading="lazy"
                             />
                         </picture>
                     </div>
@@ -378,6 +394,97 @@
                                         aria-hidden="true"
                                     />
                                 </picture>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Key Features -->
+                <section class="features" id="features">
+                    <div class="features__image">
+                        <picture>
+                            <source
+                                media="(min-width:1024px)"
+                                srcset="
+                                    /assets/images/features/features-tablet.png
+                                "
+                            />
+                            <img
+                                src="/assets/images/features/features-mobile.png"
+                                alt="Collage of a beautiful place and adventurous water sport."
+                                loading="lazy"
+                            />
+                        </picture>
+                    </div>
+                    <div class="features__body">
+                        <div class="features__text">
+                            <div class="heading-primary">
+                                <span class="heading-primary__title"
+                                    >key features</span
+                                >
+                                <h2 class="heading-lg features__heading">
+                                    We offer best services
+                                </h2>
+                            </div>
+                            <p class="description features__desc">
+                                Contrary to popular belief, Lorem Ipsum is not
+                                simply random text. It has roots in a piece of
+                                classical Latin literature from 45 BC.
+                            </p>
+                        </div>
+                        <div class="features__cards">
+                            <div class="card card--unbordered card--horizontal">
+                                <span class="icon-location features__icons"
+                                    ><span class="path1"></span
+                                    ><span class="path2"></span
+                                ></span>
+                                <div class="card__body card__body--gap-sm">
+                                    <h3
+                                        class="card__heading card__heading--sm card__heading--left"
+                                    >
+                                        We offer best services
+                                    </h3>
+                                    <p
+                                        class="description description--standard features__card-desc"
+                                    >
+                                        Lorem Ipsum is not simply random text
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card--unbordered card--horizontal">
+                                <span class="icon-calendar features__icons"
+                                    ><span class="path1"></span
+                                    ><span class="path2"></span
+                                ></span>
+                                <div class="card__body card__body--gap-sm">
+                                    <h3
+                                        class="card__heading card__heading--sm card__heading--left"
+                                    >
+                                        Schedule your trip
+                                    </h3>
+                                    <p
+                                        class="description description--standard features__card-desc"
+                                    >
+                                        It has roots in a piece of classical
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card card--unbordered card--horizontal">
+                                <span class="icon-coupon features__icons"
+                                    ><span class="path1"></span
+                                    ><span class="path2"></span
+                                ></span>
+                                <div class="card__body card__body--gap-sm">
+                                    <h3
+                                        class="card__heading card__heading--sm card__heading--left"
+                                    >
+                                        Get discounted coupons
+                                    </h3>
+                                    <p
+                                        class="description description--standard features__card-desc"
+                                    >
+                                        Lorem Ipsum is not simply random text
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
