@@ -34,6 +34,14 @@
         }
     }
 
+    &__label {
+        visibility: hidden;
+        position: absolute;
+        width: px-to-rem(1);
+        height: px-to-rem(1);
+        overflow: hidden;
+    }
+
     &__input-wrapper {
         position: relative;
         display: flex;
