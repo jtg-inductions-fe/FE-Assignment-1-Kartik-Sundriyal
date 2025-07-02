@@ -122,6 +122,7 @@ h3 {
     }
 
     &--emphasized {
+        font-family: $font-primary;
         @include respond-to(mobile) {
             font-weight: 450;
             font-size: $font-size-description-md;
