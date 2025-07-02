@@ -28,7 +28,7 @@
     }
 
     &__company-info {
-        display: flex;
+        display: inline-flex;
         gap: px-to-rem(16);
         align-items: center;
     }
@@ -86,35 +86,37 @@
     }
 
     &__list-container {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(10);
         flex: 1;
         @include respond-to(tablet) {
-            display: flex;
-            flex-direction: column;
             gap: px-to-rem(32);
-        }
-
-        @include respond-to(desktop) {
-            padding-right: px-to-rem(7);
         }
     }
 
     &__list {
         max-height: 0;
+        text-align: left;
         overflow: hidden;
         @include transition(all, 0.4s);
         display: flex;
         flex-direction: column;
         gap: px-to-rem(5);
+        visibility: hidden;
 
         @include respond-to(tablet) {
+            visibility: visible;
             max-height: max-content;
             gap: px-to-rem(32);
             transition: none;
+            overflow: visible;
         }
 
         &--open {
+            visibility: visible;
             max-height: px-to-rem(250);
-            overflow: visible;
+            overflow: auto;
         }
     }
 
@@ -122,16 +124,24 @@
         @include line-clamp(2);
     }
 
+    &__list-item {
+        text-align: left;
+        padding: px-to-rem(4);
+
+        @include respond-to(tablet) {
+            padding: 0;
+        }
+    }
+
     &__link {
         display: inline-block;
         width: 100%;
-        padding: px-to-rem(8 12);
+        padding: px-to-rem(8 0);
         border-radius: px-to-rem(10);
-        @include line-clamp(2);
+        text-align: left;
 
         @include respond-to(tablet) {
             width: fit-content;
-            padding: 0;
             border-radius: 0;
         }
 
@@ -140,7 +150,8 @@
         }
 
         &:focus-visible {
-            border: $color-primary solid px-to-rem(2);
+            outline: px-to-rem(2) solid $color-primary;
+            outline-offset: px-to-rem(2);
         }
     }
 
@@ -148,14 +159,12 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-
-        @include respond-to(tablet) {
-            cursor: default;
-        }
+        align-items: center;
     }
 
     &__list-control-arrow {
         font-size: px-to-rem(24);
+        max-height: fit-content;
         color: $color-blue-charcoal;
         @include transition(transform);
 
@@ -164,7 +173,7 @@
         }
 
         &--open {
-            transform: rotate(90deg);
+            transform: rotate(180deg);
         }
     }
 }

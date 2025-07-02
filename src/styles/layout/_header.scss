@@ -20,6 +20,7 @@
     pointer-events: none;
     display: flex;
     flex-direction: column;
+    visibility: hidden;
 }
 
 @mixin is-loaded() {
@@ -115,6 +116,7 @@
         right: 0;
 
         &--visible {
+            visibility: visible;
             width: px-to-rem(288);
             height: px-to-rem(320);
             opacity: 1;
@@ -154,6 +156,7 @@
             @include is-loaded;
 
             &--visible {
+                visibility: visible;
                 height: px-to-rem(352);
                 width: px-to-rem(352);
                 opacity: 1;
@@ -217,7 +220,6 @@
             background-color: rgba(255, 255, 255, 0.5);
 
             @include respond-to(desktop) {
-                color: $color-primary;
                 background-color: transparent;
             }
         }

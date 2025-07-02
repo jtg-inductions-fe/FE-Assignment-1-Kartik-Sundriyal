@@ -91,7 +91,7 @@ $font-size-card-heading-x-lg: px-to-rem(35);
     }
 
     &--unbordered {
-        border: none;
+        border: solid 1px transparent;
 
         &:hover {
             border: solid px-to-rem(1) $color-black-light;

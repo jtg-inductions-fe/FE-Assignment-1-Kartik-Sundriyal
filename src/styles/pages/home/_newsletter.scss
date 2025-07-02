@@ -42,6 +42,10 @@
         overflow: hidden;
     }
 
+    &__heading {
+        @include line-clamp(4);
+    }
+
     &__input-wrapper {
         position: relative;
         display: flex;
@@ -91,10 +95,14 @@
         }
     }
 
-    &__element-1 {
+    &__element-1,
+    &__element-2 {
         position: absolute;
         display: none;
+        pointer-events: none;
+    }
 
+    &__element-1 {
         @include respond-to(tablet) {
             display: inline-block;
             left: px-to-rem(-37);
@@ -107,9 +115,6 @@
     }
 
     &__element-2 {
-        position: absolute;
-        display: none;
-
         @include respond-to(tablet) {
             display: inline-block;
             right: px-to-rem(-64);

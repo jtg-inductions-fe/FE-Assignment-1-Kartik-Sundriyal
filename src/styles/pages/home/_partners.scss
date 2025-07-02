@@ -36,11 +36,11 @@
 
     &__arrows {
         position: absolute;
-        visibility: hidden;
+        display: none;
         z-index: $z-index-arrows;
 
         @include respond-to(tablet) {
-            visibility: visible;
+            display: inline-block;
             left: px-to-rem(38);
             top: px-to-rem(-46.3);
             transform: translateY(-100%);

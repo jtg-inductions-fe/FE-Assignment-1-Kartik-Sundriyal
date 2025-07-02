@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.setAttribute('aria-hidden', 'true');
     };
 
+    const changeTabOrder = (index) => {
+        menuBtn.setAttribute('tabindex', index);
+    };
+
     menuBtn.addEventListener('click', () => {
         const isOpen = hamIcon.classList.contains('icon-cross');
 
@@ -64,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    //Checking for menu open or close on viewport width change.
     const mobile = window.matchMedia('(max-width: 1024px)');
     mobile.addEventListener('change', () => {
         if (hamIcon.classList.contains('icon-cross')) {
@@ -82,6 +87,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    //changing tab order of the hamburger menu
+    const tablet = window.matchMedia('(min-width: 1024px)');
+    if (tablet.matches) {
+        changeTabOrder('1');
+    }
+    tablet.addEventListener('change', (e) => {
+        if (e.matches) {
+            changeTabOrder('1');
+        } else {
+            changeTabOrder('0');
+        }
+    });
+
+    navLinks.querySelectorAll('.header__link').forEach((link) => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+
+    /* Adding animations to menubar only after the the page content has loaded
+    to avoid animations on page load */
     requestAnimationFrame(() => {
         document
             .querySelector('.header__links')
