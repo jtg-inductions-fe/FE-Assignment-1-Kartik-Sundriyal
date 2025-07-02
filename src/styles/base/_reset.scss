@@ -59,11 +59,14 @@ button {
     width: auto;
     overflow: visible;
     background: transparent;
-    cursor: pointer;
 
     /* inherit font & color from ancestor */
     color: inherit;
     font: inherit;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
 }
 
 /* 11. Remove default link styles  */

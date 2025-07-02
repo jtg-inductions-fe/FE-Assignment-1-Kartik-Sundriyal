@@ -62,6 +62,14 @@ $testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
         gap: px-to-rem(32);
     }
 
+    &__heading {
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        @include line-clamp(7);
+    }
+
     &__btn-left,
     &__btn-right {
         font-size: px-to-rem(15.36);
@@ -77,6 +85,10 @@ $testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
             min-width: px-to-rem(100);
             min-height: px-to-rem(100);
             transform: none;
+        }
+
+        &:hover {
+            background-color: $color-primary;
         }
     }
 
@@ -104,6 +116,10 @@ $testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
     &__star {
         display: inline-block;
         font-size: px-to-rem(32);
+    }
+
+    &__arrow::before {
+        color: $color-black;
     }
 
     &__pagination {

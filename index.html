@@ -37,6 +37,7 @@
                         <span class="icon-app-logo header__logo"></span>
                     </a>
                     <div
+                        id="header__menubar"
                         class="header__menubar"
                         role="region"
                         aria-label="Navigation menu"
@@ -495,8 +496,11 @@
                         <button
                             class="button button--secondary testimonials__btn-left button--round button--outline-dark glide__arrow glide__arrow--left"
                             data-glide-dir="<"
+                            aria-label="previous testimonial"
                         >
-                            <span class="icon-arrow-left"></span>
+                            <span
+                                class="icon-arrow-left testimonials__arrow"
+                            ></span>
                         </button>
                     </div>
                     <div class="testimonials__body">
@@ -504,7 +508,9 @@
                             <span class="heading-primary__title"
                                 >testimonials</span
                             >
-                            <h3 class="heading-lg">Trust our clients</h3>
+                            <h3 class="heading-lg testimonials__heading">
+                                Trust our clients
+                            </h3>
                         </div>
                         <div class="glide__track" data-glide-el="track">
                             <ul class="testimonials__slides glide__slides">
@@ -546,7 +552,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="description description--emphasized"
+                                        class="description description--emphasized testimonials__desc"
                                     >
                                         Contrary to popular belief, Lorem Ipsum
                                         is not simply random text. It has roots
@@ -592,7 +598,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="description description--emphasized"
+                                        class="description description--emphasized testimonials__desc"
                                     >
                                         Contrary to popular belief, Lorem Ipsum
                                         is not simply random text. It has roots
@@ -638,7 +644,7 @@
                                         </div>
                                     </div>
                                     <p
-                                        class="description description--emphasized"
+                                        class="description description--emphasized testimonials__desc"
                                     >
                                         Contrary to popular belief, Lorem Ipsum
                                         is not simply random text. It has roots
@@ -668,10 +674,13 @@
                     </div>
                     <div class="glide__arrows" data-glide-el="controls">
                         <button
-                            class="button button--primary testimonials__btn-right button--round glide__arrow glide__arrow--right"
+                            class="button button--secondary testimonials__btn-right button--round glide__arrow glide__arrow--right"
                             data-glide-dir=">"
+                            aria-label="next testimonial"
                         >
-                            <span class="icon-arrow-right"></span>
+                            <span
+                                class="icon-arrow-right testimonials__arrow"
+                            ></span>
                         </button>
                     </div>
                 </section>
@@ -697,13 +706,15 @@
                         <span class="heading-primary__title"
                             >subscribe to our newsletter</span
                         >
-                        <h3 class="heading-lg heading-lg--enlarge">
+                        <h3
+                            class="heading-lg heading-lg--enlarge newsletter__heading"
+                        >
                             Prepare yourself & let’s explore the beauty of the
                             world
                         </h3>
                     </div>
                     <div class="newsletter__body">
-                        <form action="/" class="newsletter__form">
+                        <form class="newsletter__form">
                             <div class="newsletter__input-wrapper">
                                 <label for="email" class="newsletter__label"
                                     >Email</label
@@ -784,19 +795,19 @@
                             </button>
                             <ul class="footer__list" id="list-1">
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#"> About </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#">
                                         Career
                                     </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#">
                                         Mobile
@@ -818,26 +829,26 @@
                             </button>
                             <ul class="footer__list" id="list-2">
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#">
                                         Why Travlog?
                                     </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#">
                                         Partner with us
                                     </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#"> FAQ's </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#"> Blog </a>
                                 </li>
@@ -857,7 +868,7 @@
                             </button>
                             <ul class="footer__list" id="list-3">
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a
                                         class="footer__link"
@@ -867,7 +878,7 @@
                                     </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a
                                         class="footer__link"
@@ -877,7 +888,7 @@
                                     </a>
                                 </li>
                                 <li
-                                    class="description description--standard footer__desc"
+                                    class="description description--standard footer__list-item"
                                 >
                                     <a class="footer__link" href="#">
                                         205. R Street, New York BD23200

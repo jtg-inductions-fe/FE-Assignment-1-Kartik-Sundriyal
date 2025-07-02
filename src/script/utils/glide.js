@@ -8,6 +8,9 @@ const GLIDE_CONFIG = {
     animationDuration: 600,
 };
 
-const glide = new Glide('.glide', GLIDE_CONFIG);
+const glideElement = document.querySelector('.glide');
 
-glide.mount();
+if (glideElement) {
+    const glide = new Glide('.glide', GLIDE_CONFIG);
+    glide.mount();
+}

@@ -5,10 +5,9 @@
 .ellipse {
     position: absolute;
     opacity: 0.5;
-    filter: blur(px-to-rem(167.5));
+    filter: blur(168px);
     width: px-to-rem(272);
     height: px-to-rem(348);
-    z-index: $z-index-ellipse;
     border-radius: 100%;
 
     &--orange {
@@ -21,7 +20,7 @@
             height: px-to-rem(500);
             left: px-to-rem(-163);
             top: px-to-rem(-174);
-            filter: blur(px-to-rem(250));
+            filter: blur(250px);
         }
 
         @include respond-to(desktop) {
@@ -35,6 +34,7 @@
     &--yellow {
         background: $color-yellow;
         display: none;
+        z-index: $z-index-ellipse;
 
         @include respond-to(tablet) {
             top: px-to-rem(-229);
@@ -42,11 +42,11 @@
             display: inline-block;
             width: px-to-rem(80);
             height: px-to-rem(406);
-            filter: blur(px-to-rem(80));
+            filter: blur(80px);
         }
 
         @include respond-to(desktop) {
-            filter: blur(px-to-rem(100));
+            filter: blur(100px);
             width: px-to-rem(100);
             right: px-to-rem(-38.37);
             top: px-to-rem(-200);

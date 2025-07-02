@@ -2,6 +2,11 @@ const focusableSelectors = 'a, button, input, [tabindex]:not([tabindex="-1"])';
 
 const trapFocus = (element, callback, returnFocusEl) => {
     const focusableEls = element.querySelectorAll(focusableSelectors);
+
+    if (focusableEls.length == 0) {
+        return () => {};
+    }
+
     const firstEl = focusableEls[0];
     const lastEl = focusableEls[focusableEls.length - 1];
 
@@ -27,7 +32,11 @@ const trapFocus = (element, callback, returnFocusEl) => {
     }
 
     element.addEventListener('keydown', handleKeyDown);
-    element.focus();
+
+    setTimeout(() => {
+        element.focus();
+    }, 400);
+
     element.dataset.trapFocus = 'true';
 
     // Cleanup
