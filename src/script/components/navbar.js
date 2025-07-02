@@ -100,6 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    navLinks.querySelectorAll('.header__link').forEach((link) => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+
     /* Adding animations to menubar only after the the page content has loaded
     to avoid animations on page load */
     requestAnimationFrame(() => {

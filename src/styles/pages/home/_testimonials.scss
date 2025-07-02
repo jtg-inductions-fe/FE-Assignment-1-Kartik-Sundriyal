@@ -89,6 +89,10 @@ $testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
 
         &:hover {
             background-color: $color-primary;
+
+            & ::before {
+                color: $color-white;
+            }
         }
     }
 
@@ -98,6 +102,14 @@ $testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
 
     &__btn-right {
         right: px-to-rem(16);
+    }
+
+    &__client-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include line-clamp(2);
     }
 
     &__client-name {

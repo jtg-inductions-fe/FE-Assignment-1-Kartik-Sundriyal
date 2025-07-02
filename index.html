@@ -44,8 +44,8 @@
                         tabindex="-1"
                     >
                         <ul class="header__links" tabindex="-1">
-                            <li class="header__link header__link--active">
-                                <a href="/" aria-label="Home">Home</a>
+                            <li class="header__link">
+                                <a href="#hero" aria-label="Home">Home</a>
                             </li>
                             <li class="header__link">
                                 <a href="#services" aria-label="Discover"
@@ -96,7 +96,7 @@
             <!-- Main -->
             <main class="body__main">
                 <!-- Hero -->
-                <section class="hero">
+                <section class="hero" id="hero">
                     <div class="hero__image">
                         <picture>
                             <source
@@ -674,7 +674,7 @@
                     </div>
                     <div class="glide__arrows" data-glide-el="controls">
                         <button
-                            class="button button--secondary testimonials__btn-right button--round glide__arrow glide__arrow--right"
+                            class="button button--secondary testimonials__btn-right button--round button--outline-dark glide__arrow--right"
                             data-glide-dir=">"
                             aria-label="next testimonial"
                         >
@@ -744,11 +744,13 @@
                 <!-- Footer -->
                 <footer class="footer" id="footer">
                     <div class="footer__info">
-                        <div class="footer__company-info">
-                            <a href="/">
+                        <div>
+                            <a
+                                href="#"
+                                class="footer__company-info"
+                                aria-label="company logo and name"
+                            >
                                 <span class="icon-app-logo footer__logo"></span>
-                            </a>
-                            <a href="/">
                                 <h2>Travlog</h2>
                             </a>
                         </div>
@@ -760,10 +762,17 @@
                             classical Latin literature from 45 BC.
                         </p>
                         <div class="footer__icons">
-                            <a href="https://www.facebook.com/" target="_blank"
+                            <a
+                                href="https://www.facebook.com/"
+                                target="_blank"
+                                aria-label="facebook"
                                 ><span class="icon-facebook footer__icon"></span
                             ></a>
-                            <a href="https://www.x.com/" target="_blank">
+                            <a
+                                href="https://www.x.com/"
+                                target="_blank"
+                                aria-label="twitter"
+                            >
                                 <span class="icon-twitter footer__icon"
                                     ><span class="path1"></span
                                     ><span class="path2"></span
@@ -772,6 +781,7 @@
                             <a
                                 href="https://www.instagram.com/"
                                 target="_blank"
+                                aria-label="instagram"
                             >
                                 <span class="icon-instagram footer__icon"
                                     ><span class="path1"></span

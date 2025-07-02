@@ -28,7 +28,7 @@
     }
 
     &__company-info {
-        display: flex;
+        display: inline-flex;
         gap: px-to-rem(16);
         align-items: center;
     }

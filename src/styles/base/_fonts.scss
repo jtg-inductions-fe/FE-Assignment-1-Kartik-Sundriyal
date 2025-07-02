@@ -20,11 +20,4 @@
 );
 
 // Inter Variable
-@include font-face(
-    'inter',
-    '100 900',
-    normal,
-    $font-path + 'inter.woff2',
-    null,
-    'woff2-variations'
-);
+@include font-face('inter', 400, normal, $font-path + 'inter.woff2', null);
