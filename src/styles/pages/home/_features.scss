@@ -26,7 +26,6 @@
         @include respond-to(desktop) {
             order: 1;
             padding: 0;
-            width: 50%;
         }
     }
 
@@ -36,6 +35,7 @@
 
     &__desc {
         @include line-clamp(6);
+        padding-right: px-to-rem(32);
     }
 
     &__body {
@@ -50,8 +50,9 @@
         }
 
         @include respond-to(desktop) {
-            width: 50%;
             align-items: center;
+            max-width: px-to-rem(575);
+            padding-right: px-to-rem(48);
         }
     }
 
@@ -74,6 +75,11 @@
     &__card-desc {
         @include line-clamp(4);
         text-align: left;
+        padding-right: px-to-rem(32);
+
+        @include respond-to(desktop) {
+            padding-right: 0;
+        }
     }
 
     &__icons {
