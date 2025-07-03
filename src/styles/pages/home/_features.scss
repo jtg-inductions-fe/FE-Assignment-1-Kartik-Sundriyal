@@ -51,8 +51,8 @@
 
         @include respond-to(desktop) {
             align-items: center;
-            max-width: 575px;
-            padding-right: 3rem;
+            max-width: px-to-rem(575);
+            padding-right: px-to-rem(48);
         }
     }
 
