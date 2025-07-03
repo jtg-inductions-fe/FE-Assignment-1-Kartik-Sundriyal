@@ -143,6 +143,7 @@
         @include respond-to(tablet) {
             width: fit-content;
             border-radius: 0;
+            padding: 0;
         }
 
         &:hover {

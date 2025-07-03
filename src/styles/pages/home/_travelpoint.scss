@@ -43,6 +43,7 @@
         @include respond-to(desktop) {
             width: 45%;
             margin-left: px-to-rem(0);
+            padding-top: px-to-rem(32);
         }
     }
 
@@ -94,7 +95,7 @@
             display: block;
             position: absolute;
             top: px-to-rem(-93);
-            right: px-to-rem(-61);
+            right: px-to-rem(-68);
         }
     }
 }
