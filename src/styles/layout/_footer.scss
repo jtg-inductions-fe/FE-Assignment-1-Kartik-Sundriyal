@@ -1,0 +1,180 @@
+@use '../abstracts' as *;
+
+.footer {
+    margin: px-to-rem(100 16 35);
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(94);
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(0 64);
+        padding: px-to-rem(64 0);
+        gap: px-to-rem(64);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(0 123);
+        flex-direction: row;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        @include respond-to(desktop) {
+            flex: 1;
+        }
+    }
+
+    &__company-info {
+        display: inline-flex;
+        gap: px-to-rem(16);
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: px-to-rem(40);
+        background: linear-gradient(to right, $color-secondary, $color-primary);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+    }
+
+    &__desc {
+        @include line-clamp(6);
+        text-align: left;
+
+        @include respond-to(tablet) {
+            padding: 0;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        gap: px-to-rem(32);
+
+        @include respond-to(desktop) {
+            margin-top: auto;
+        }
+    }
+
+    &__icon {
+        font-size: px-to-rem(32);
+
+        &:hover {
+            &::before,
+            & :first-child::before {
+                color: darken($color-primary, 20%);
+            }
+        }
+    }
+
+    &__lists {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(71);
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            gap: px-to-rem(32);
+        }
+
+        @include respond-to(desktop) {
+            flex: 1;
+        }
+    }
+
+    &__list-container {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(10);
+        flex: 1;
+        @include respond-to(tablet) {
+            gap: px-to-rem(32);
+        }
+    }
+
+    &__list {
+        max-height: 0;
+        text-align: left;
+        overflow: hidden;
+        @include transition(all, 0.4s);
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(5);
+        visibility: hidden;
+
+        @include respond-to(tablet) {
+            visibility: visible;
+            max-height: max-content;
+            gap: px-to-rem(32);
+            transition: none;
+            overflow: visible;
+        }
+
+        &--open {
+            visibility: visible;
+            max-height: px-to-rem(250);
+            overflow: auto;
+        }
+    }
+
+    &__list-title {
+        @include line-clamp(2);
+    }
+
+    &__list-item {
+        text-align: left;
+        padding: px-to-rem(4);
+
+        @include respond-to(tablet) {
+            padding: 0;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        width: 100%;
+        padding: px-to-rem(8 0);
+        border-radius: px-to-rem(10);
+        text-align: left;
+
+        @include respond-to(tablet) {
+            width: fit-content;
+            border-radius: 0;
+            padding: 0;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &:focus-visible {
+            outline: px-to-rem(2) solid $color-primary;
+            outline-offset: px-to-rem(2);
+        }
+    }
+
+    &__list-control {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__list-control-arrow {
+        font-size: px-to-rem(24);
+        max-height: fit-content;
+        color: $color-blue-charcoal;
+        @include transition(transform);
+
+        @include respond-to(tablet) {
+            display: none;
+        }
+
+        &--open {
+            transform: rotate(180deg);
+        }
+    }
+}

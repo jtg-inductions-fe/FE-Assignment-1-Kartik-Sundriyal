@@ -1,0 +1,55 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+.ellipse {
+    position: absolute;
+    opacity: 0.5;
+    filter: blur(168px);
+    width: px-to-rem(272);
+    height: px-to-rem(348);
+    border-radius: 100%;
+
+    &--orange {
+        left: px-to-rem(-33);
+        top: px-to-rem(-36);
+        background: $color-orange;
+
+        @include respond-to(tablet) {
+            width: px-to-rem(500);
+            height: px-to-rem(500);
+            left: px-to-rem(-163);
+            top: px-to-rem(-174);
+            filter: blur(250px);
+        }
+
+        @include respond-to(desktop) {
+            width: px-to-rem(503);
+            height: px-to-rem(494);
+            top: px-to-rem(42.91);
+            left: px-to-rem(-70.99);
+        }
+    }
+
+    &--yellow {
+        background: $color-yellow;
+        display: none;
+        z-index: $z-index-ellipse;
+
+        @include respond-to(tablet) {
+            top: px-to-rem(-229);
+            right: 0;
+            display: inline-block;
+            width: px-to-rem(80);
+            height: px-to-rem(406);
+            filter: blur(80px);
+        }
+
+        @include respond-to(desktop) {
+            filter: blur(100px);
+            width: px-to-rem(100);
+            right: px-to-rem(-38.37);
+            top: px-to-rem(-200);
+        }
+    }
+}

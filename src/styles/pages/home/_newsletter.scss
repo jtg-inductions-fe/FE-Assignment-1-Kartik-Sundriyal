@@ -1,0 +1,129 @@
+@use '../../abstracts' as *;
+
+.newsletter {
+    position: relative;
+    margin: px-to-rem(181 48 95);
+    display: flex;
+    flex-direction: column;
+    gap: px-to-rem(64);
+
+    @include respond-to(tablet) {
+        margin: px-to-rem(51 64 0);
+        padding: px-to-rem(128 64);
+        background-color: $color-yellow-light;
+        border-radius: px-to-rem(32);
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(177 123 130);
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: px-to-rem(32);
+
+        @include respond-to(tablet) {
+            flex-direction: row;
+            width: 100%;
+            flex: 2 1;
+        }
+
+        @include respond-to(desktop) {
+            gap: px-to-rem(64);
+        }
+    }
+
+    &__label {
+        visibility: hidden;
+        position: absolute;
+        width: px-to-rem(1);
+        height: px-to-rem(1);
+        overflow: hidden;
+    }
+
+    &__heading {
+        @include line-clamp(4);
+    }
+
+    &__input-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: px-to-rem(16);
+        line-height: $line-height-base;
+        font-size: $font-size-sm;
+        font-weight: 700;
+        color: $color-text-medium;
+
+        @include respond-to(tablet) {
+            font-size: $font-size-md;
+            flex: 2;
+        }
+    }
+
+    &__email-input {
+        display: inline-block;
+        background-color: $color-white;
+        padding: px-to-rem(24 32 24 70);
+        border-radius: px-to-rem(16);
+        border-style: none;
+        width: 100%;
+
+        @include respond-to(tablet) {
+            padding: px-to-rem(35 32 35 80);
+            border-radius: px-to-rem(32);
+            height: 100%;
+        }
+    }
+
+    &__input-placeholder {
+        position: absolute;
+        top: px-to-rem(22);
+        left: px-to-rem(32);
+
+        @include respond-to(tablet) {
+            top: px-to-rem(32);
+        }
+    }
+
+    &__input-icon {
+        font-size: px-to-rem(24);
+
+        @include respond-to(tablet) {
+            font-size: px-to-rem(32);
+        }
+    }
+
+    &__element-1,
+    &__element-2 {
+        position: absolute;
+        display: none;
+        pointer-events: none;
+    }
+
+    &__element-1 {
+        @include respond-to(tablet) {
+            display: inline-block;
+            left: px-to-rem(-37);
+            top: px-to-rem(-51);
+        }
+
+        @include respond-to(desktop) {
+            opacity: 0.1;
+        }
+    }
+
+    &__element-2 {
+        @include respond-to(tablet) {
+            display: inline-block;
+            right: px-to-rem(-64);
+            top: px-to-rem(-328);
+        }
+
+        @include respond-to(desktop) {
+            top: px-to-rem(496);
+            right: px-to-rem(-123);
+        }
+    }
+}

@@ -1,0 +1,47 @@
+@use 'functions' as *;
+
+//Color variables:
+$color-primary: rgba(93, 80, 198, 1);
+$color-secondary: rgba(248, 94, 159, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-orange: rgba(255, 87, 34, 1);
+$color-text-medium: rgba(25, 24, 37, 0.75);
+$color-text-light: rgba(25, 24, 37, 0.5);
+$color-text-x-light: rgba(25, 24, 37, 0.05);
+$color-yellow: rgba(250, 205, 73, 1);
+$color-yellow-light: rgba(250, 205, 73, 0.08);
+$color-black: rgba(25, 24, 37, 1);
+$color-black-light: rgba(25, 24, 37, 0.1);
+$color-dark: rgba(34, 40, 49, 1);
+$color-light: rgba(238, 238, 238, 1);
+$color-blue-charcoal: rgba(41, 45, 50, 1);
+
+//Breakpoint variables:
+$breakpoint-mobile: px-to-rem(430);
+$breakpoint-tablet: px-to-rem(1024);
+$breakpoint-desktop: px-to-rem(1440);
+
+// Font families
+$font-primary: 'circular-std', sans-serif;
+$font-secondary: 'inter', sans-serif;
+
+// Font sizes
+$font-size-base: px-to-rem(16);
+$font-size-sm: px-to-rem(14);
+$font-size-md: px-to-rem(23);
+$font-size-lg: px-to-rem(35);
+
+// Line heights
+$line-height-base: 1.2;
+$line-height-description: 1.6;
+$line-height-fixed: px-to-rem(40);
+
+// Font path
+$font-path: '/assets/fonts/';
+$icomoon-path: '/assets/icomoon/';
+
+// Z-indexes
+$z-index-menu: 100;
+$z-index-sticky: 10;
+$z-index-ellipse: -10;
+$z-index-arrows: 1;

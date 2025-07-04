@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+// Global body text styling
+html {
+    scroll-behavior: smooth;
+}
+
+.body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    background-color: $color-white;
+
+    &--no-scroll {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    &__main {
+        width: 100%;
+        &--blur {
+            filter: blur(2px);
+
+            @include respond-to(desktop) {
+                filter: none;
+            }
+        }
+    }
+}

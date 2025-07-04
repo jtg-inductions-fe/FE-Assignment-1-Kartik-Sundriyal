@@ -1,0 +1,140 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+@use '../abstracts/mixins' as *;
+
+$font-size-heading-1-sm: px-to-rem(40);
+$font-size-heading-1-md: px-to-rem(56);
+$font-size-heading-1-lg: px-to-rem(69);
+
+$font-size-heading-2-sm: px-to-rem(32);
+$font-size-heading-2-md: px-to-rem(40);
+$font-size-heading-2-lg: px-to-rem(44);
+$font-size-heading-2-xl: px-to-rem(55);
+
+$font-size-description-sm: px-to-rem(16);
+$font-size-description-md: px-to-rem(18);
+$font-size-description-lg: px-to-rem(23);
+
+// Headings
+h1,
+h2,
+h3 {
+    font-family: $font-primary;
+    font-weight: 700;
+    line-height: $line-height-base;
+    color: $color-black;
+}
+
+.heading-xl {
+    font-size: $font-size-heading-1-sm;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-heading-1-md;
+    }
+
+    @include respond-to(desktop) {
+        font-size: $font-size-heading-1-lg;
+    }
+}
+
+.heading-lg {
+    font-size: $font-size-heading-2-sm;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-heading-2-md;
+    }
+
+    @include respond-to(desktop) {
+        font-size: $font-size-heading-2-lg;
+        text-align: left;
+    }
+
+    &--enlarge {
+        @include respond-to(desktop) {
+            font-size: $font-size-heading-2-xl;
+            text-align: center;
+        }
+    }
+}
+
+.heading-primary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: px-to-rem(16);
+
+    @include respond-to(desktop) {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    &__title {
+        @include line-clamp();
+        color: $color-secondary;
+        font-size: $font-size-base;
+        font-weight: 700;
+        line-height: $line-height-base;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        @include respond-to(tablet) {
+            font-size: $font-size-md;
+        }
+    }
+
+    &--centered {
+        @include respond-to(desktop) {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &--gap-md {
+        gap: px-to-rem(32);
+    }
+}
+
+.description {
+    font-size: $font-size-description-sm;
+    font-weight: 400;
+    color: $color-text-light;
+    font-family: $font-secondary;
+    line-height: $line-height-description;
+    text-align: center;
+
+    @include respond-to(tablet) {
+        font-size: $font-size-description-md;
+    }
+
+    @include respond-to(desktop) {
+        text-align: left;
+    }
+
+    &--standard {
+        @include respond-to(mobile) {
+            font-size: $font-size-description-md;
+        }
+
+        @include respond-to(desktop) {
+            text-align: center;
+        }
+    }
+
+    &--emphasized {
+        font-family: $font-primary;
+        @include respond-to(mobile) {
+            font-weight: 450;
+            font-size: $font-size-description-md;
+        }
+
+        @include respond-to(tablet) {
+            font-size: $font-size-description-lg;
+        }
+
+        @include respond-to(desktop) {
+            text-align: center;
+            padding: px-to-rem(0 24);
+        }
+    }
+}

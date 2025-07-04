@@ -1,0 +1,84 @@
+@use 'variables' as *;
+@use 'functions' as *;
+
+$breakpoints: (
+    'mobile': $breakpoint-mobile,
+    'tablet': $breakpoint-tablet,
+    'desktop': $breakpoint-desktop,
+);
+
+/// A mixin for handling responsive breakpoints using a `$breakpoints` map.
+/// Injects styles inside a `@media (width-type: ...)` query based on the named breakpoint.
+///
+/// @param {String} $breakpoint - The key name of the breakpoint to target (must exist in `$breakpoints` map).
+/// @param {String} $width-type - The width type for the media query (default: min-width).
+/// @content - The CSS rules to include within the media query.
+
+@mixin respond-to($breakpoint, $width-type: min-width) {
+    $size: map-get($breakpoints, $breakpoint);
+    @if $size {
+        @media ($width-type: $size) {
+            @content;
+        }
+    } @else {
+        @warn "No value found for breakpoint `#{$breakpoint}`.";
+    }
+}
+
+/// Shorthand mixin to apply CSS transitions with customizable properties,
+/// duration, and timing function.
+///
+/// @param {String} $properties - The CSS properties to transition (default: 'all').
+/// @param {Time} $duration - The duration of the transition (default: 0.3s).
+/// @param {String} $timing - The timing function for the transition
+///
+
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out) {
+    transition-property: $properties;
+    transition-duration: $duration;
+    transition-timing-function: $timing;
+}
+
+/// Creates a `@font-face` rule with support for WOFF2 and optional WOFF fallback.
+/// Includes `font-display: swap` for better performance.
+///
+/// @param {String} $family - The name of the font-family to be used (e.g., 'MyFont').
+/// @param {Number|String} $weight - The font weight (e.g., 400, 'bold').
+/// @param {String} $style - The font style (e.g., 'normal', 'italic', 'oblique').
+/// @param {String} $woff2 - The URL to the .woff2 font file (required).
+/// @param {String|null} $woff - The URL to the .woff font file (optional fallback).
+/// @param {String} $format - The font format for the main source (default: 'woff2').
+///
+@mixin font-face(
+    $family,
+    $weight,
+    $style,
+    $woff2,
+    $woff: null,
+    $format: 'woff2'
+) {
+    $src: "url(#{$woff2}) format('#{$format}')";
+
+    @if $woff {
+        $src: $src + ", url(#{$woff}) format('woff')";
+    }
+
+    @font-face {
+        font-family: unquote($family);
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+        src: #{unquote($src)};
+    }
+}
+
+/// Sets a line clamp for textual elements
+/// @param {Number} $num-of-lines - The number of lines needed
+/// @param {String} $orientation
+@mixin line-clamp($num-of-lines: 2, $orientation: vertical) {
+    display: -webkit-box;
+    -webkit-box-orient: $orientation;
+    -webkit-line-clamp: $num-of-lines;
+    line-clamp: $num-of-lines;
+    overflow: hidden;
+}

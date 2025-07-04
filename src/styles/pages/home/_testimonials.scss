@@ -1,0 +1,160 @@
+@use '../../abstracts' as *;
+
+$testimonials-bg-image: '/assets/images/testimonials/bg-image.png';
+
+.testimonials {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: px-to-rem(71 0);
+    padding: px-to-rem(0 16);
+    max-width: 100%;
+
+    @include respond-to(tablet) {
+        margin: 0;
+        padding: px-to-rem(64);
+        gap: px-to-rem(56);
+        flex-direction: row;
+        background-image: url($testimonials-bg-image);
+        background-size: auto;
+        background-position: center;
+    }
+
+    @include respond-to(desktop) {
+        margin: px-to-rem(106 0);
+        padding: px-to-rem(0 123);
+        background-size: 105% 220%;
+        background-position: center 40%;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        overflow: hidden;
+        gap: px-to-rem(64);
+        @include respond-to(tablet) {
+            max-width: 65%;
+            gap: px-to-rem(56);
+        }
+
+        @include respond-to(desktop) {
+            max-width: 100%;
+        }
+    }
+
+    &__slide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: px-to-rem(64);
+
+        @include respond-to(tablet) {
+            gap: px-to-rem(56);
+        }
+    }
+
+    &__data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: px-to-rem(32);
+    }
+
+    &__heading {
+        @include line-clamp(3);
+    }
+
+    &__desc {
+        @include line-clamp(7);
+    }
+
+    &__btn-left,
+    &__btn-right {
+        font-size: px-to-rem(15.36);
+        position: absolute;
+        bottom: px-to-rem(-48);
+        transform: translateY(100%);
+        min-width: px-to-rem(64);
+        min-height: px-to-rem(64);
+
+        @include respond-to(tablet) {
+            font-size: px-to-rem(24);
+            position: static;
+            min-width: px-to-rem(100);
+            min-height: px-to-rem(100);
+            transform: none;
+        }
+
+        &:hover {
+            background-color: $color-primary;
+
+            & ::before {
+                color: $color-white;
+            }
+        }
+    }
+
+    &__btn-left {
+        left: px-to-rem(16);
+    }
+
+    &__btn-right {
+        right: px-to-rem(16);
+    }
+
+    &__client-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        @include line-clamp(2);
+    }
+
+    &__client-name {
+        font-size: px-to-rem(28);
+        color: $color-orange;
+    }
+    &__client-role {
+        font-size: px-to-rem(23);
+    }
+
+    &__client-rating {
+        display: flex;
+        gap: px-to-rem(16);
+    }
+
+    &__star {
+        display: inline-block;
+        font-size: px-to-rem(32);
+    }
+
+    &__arrow::before {
+        color: $color-black;
+    }
+
+    &__pagination {
+        display: flex;
+        gap: px-to-rem(24);
+        justify-content: center;
+    }
+
+    &__page {
+        width: px-to-rem(24);
+        height: px-to-rem(24);
+        background-color: $color-text-x-light;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+.glide__bullet--active {
+    background-color: $color-secondary;
+}
+
+.glide__arrow[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+}
